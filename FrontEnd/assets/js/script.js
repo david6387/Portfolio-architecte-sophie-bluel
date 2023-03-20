@@ -3,3 +3,4 @@ fetch("http://localhost:5678/api/works")
   .then((works) => {
     console.log(works);
   });
+  .catch()
