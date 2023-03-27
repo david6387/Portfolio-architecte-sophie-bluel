@@ -16,11 +16,22 @@ const imageElement = document.createElement("img");
 imageElement.src = article.imageUrl;
 const titleElement = document.createElement("h2");
 titleElement.innerText = article.title;
-const nameElement = document.createElement("p");
-nameElement.innerText = article.name;
 
+const categoryElement = document.createElement("p");
+categoryElement.innerText = article.categoryId;
+if (categoryId == 1) {
+  console.log("Objets");
+} else if (categoryId == 2) {
+  console.log("Appartements");
+} else if (categoryId == 2) {
+  console.log("Hotels & restaurants");
+}
 // rattachement des balises au DOM
 
 const sectionPortfolio = document.querySelector(".portfolio");
 
 sectionPortfolio.appendChild(imageElement);
+sectionPortfolio.appendChild(titleElement);
+sectionPortfolio.appendChild(categoryElement);
+sectionPortfolio.appendChild();
+sectionPortfolio.appendChild();
