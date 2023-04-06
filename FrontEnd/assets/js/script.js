@@ -23,14 +23,37 @@ const displayWorks = async () => {
     console.log(work);
     let figure = document.createElement("figure");
     let img = document.createElement("img");
+    let figcaption = document.createElement("figcaption");
+
     img.setAttribute("src", work.imageUrl);
     img.setAttribute("alt", work.title);
+    figcaption.setAttribute("figcpation", work.title);
 
     figure.appendChild(img);
     gallery.appendChild(figure);
   }
 };
 displayWorks();
+
+// Affichage des catégories
+let categories = [];
+
+const sectionCategories = document.querySelector(".categories");
+console.log("categories");
+const apiCategories = async () => {
+  await fetch("http://localhost:5678/api/categories")
+    .then((response) => response.json())
+    .then((categoriesResponse) => {
+      console.log(categoriesResponse);
+      categories = categoriesResponse;
+    });
+};
+
+const displayCategory = async () => {
+  await apiCategories();
+  console.log(categories);
+  for(let category of categories)
+};
 
 // const article = works[0];
 // const imageElement = document.createElement("img");
