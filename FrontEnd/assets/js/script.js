@@ -27,9 +27,11 @@ const displayWorks = async () => {
 
     img.setAttribute("src", work.imageUrl);
     img.setAttribute("alt", work.title);
-    figcaption.setAttribute("figcpation", work.title);
+    // figcaption.setAttribute("figcpation", work.title);
+    figcaption.innerText = work.title;
 
     figure.appendChild(img);
+    figure.appendChild(figcaption);
     gallery.appendChild(figure);
   }
 };
@@ -49,12 +51,16 @@ const apiCategories = async () => {
     });
 };
 
-const displayCategory = async () => {
+const displayCategories = async () => {
+  await apiWorks();
   await apiCategories();
   console.log(categories);
-  for(let category of categories)
+  for (let category of categories) {
+    console.log(category);
+    // debugger;
+  }
 };
-
+displayCategories();
 // const article = works[0];
 // const imageElement = document.createElement("img");
 // imageElement.src = article.imageUrl;
