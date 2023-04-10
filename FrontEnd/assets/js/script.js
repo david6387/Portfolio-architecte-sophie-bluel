@@ -79,3 +79,13 @@ const displayCategories = async () => {
   }
 };
 displayCategories();
+
+// Il faudra aussi gérer quand l'utilisateur clique sur un des boutons
+// avec un addEventListener pour trier en fonction de la catégorie.
+
+// Bien penser en amont à mettre un attribut custom qui contiendra
+// l'identifiant de la catégorie sur chaque élément figure.
+
+// Pour ensuite boucler sur toutes les figures et switcher entre
+// deux classes (une pour faire apparaître et une pour faire disparaitre)
+//  si l'identifiant correspond à la catégorie.
