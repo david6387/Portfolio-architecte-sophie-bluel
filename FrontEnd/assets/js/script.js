@@ -58,13 +58,24 @@ const displayCategories = async () => {
   for (let category of categories) {
     console.log(category);
     // debugger;
-    let newUl = document.createElement("ul");
+    let newLi = document.createElement("li");
     let buttonsOfCategories = document.createElement("button");
+    let buttonForAll = document.createElement("button");
 
     buttonsOfCategories.innerText = category.name;
+    buttonForAll.innerText = "Tous";
 
-    newUl.appendChild(buttonsOfCategories);
-    sectionCategories.appendChild(newUl);
+    newLi.appendChild(buttonsOfCategories);
+    sectionCategories.appendChild(newLi);
+
+    buttonsOfCategories.addEventListener("mouseover", () => {
+      buttonsOfCategories.style.background = "#1D6154";
+      buttonsOfCategories.style.color = "white";
+    });
+    buttonsOfCategories.addEventListener("mouseout", () => {
+      buttonsOfCategories.style.background = "white";
+      buttonsOfCategories.style.color = "#1D6154";
+    });
   }
 };
 displayCategories();
