@@ -18,9 +18,9 @@ const apiWorks = async () => {
 // création des balises avec createElement
 const displayWorks = async () => {
   await apiWorks();
-  console.log(works);
+  // console.log(works);
   for (let work of works) {
-    console.log(work);
+    // console.log(work);
     let figure = document.createElement("figure");
     let img = document.createElement("img");
     let figcaption = document.createElement("figcaption");
@@ -40,13 +40,13 @@ displayWorks();
 // Affichage des catégories
 let categories = [];
 
-const sectionCategories = document.querySelector(".categories");
-console.log("categories");
+const sectionCategories = document.getElementsByClassName("categories")[0];
+// console.log("categories");
 const apiCategories = async () => {
   await fetch("http://localhost:5678/api/categories")
     .then((response) => response.json())
     .then((categoriesResponse) => {
-      console.log(categoriesResponse);
+      // console.log(categoriesResponse);
       categories = categoriesResponse;
     });
 };
@@ -54,10 +54,17 @@ const apiCategories = async () => {
 const displayCategories = async () => {
   await apiWorks();
   await apiCategories();
-  console.log(categories);
+  // console.log(categories);
   for (let category of categories) {
     console.log(category);
     // debugger;
+    let newUl = document.createElement("ul");
+    let listOfCategories = document.createElement("li");
+
+    listOfCategories.innerText = category.name;
+
+    newUl.appendChild(listOfCategories);
+    sectionCategories.appendChild(newUl);
   }
 };
 displayCategories();
