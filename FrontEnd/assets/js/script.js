@@ -59,11 +59,11 @@ const displayCategories = async () => {
     console.log(category);
     // debugger;
     let newUl = document.createElement("ul");
-    let listOfCategories = document.createElement("li");
+    let buttonsOfCategories = document.createElement("button");
 
-    listOfCategories.innerText = category.name;
+    buttonsOfCategories.innerText = category.name;
 
-    newUl.appendChild(listOfCategories);
+    newUl.appendChild(buttonsOfCategories);
     sectionCategories.appendChild(newUl);
   }
 };
