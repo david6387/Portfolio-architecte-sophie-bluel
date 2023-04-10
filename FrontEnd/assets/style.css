@@ -227,6 +227,7 @@ li:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 50px 0 50px 0;
 }
 
 .categories ul button {
@@ -235,6 +236,11 @@ li:hover {
 	background: white;
 	color: #1D6154;
 	margin-left: 10px;
+	font-family: 'Syne';
+	font-size: 16px;
+	text-align: center;
+	height: 37px;
+	padding: 0 15px 0 15px;
 }
 
 .gallery {
