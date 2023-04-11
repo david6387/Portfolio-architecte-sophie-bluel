@@ -55,15 +55,17 @@ const displayCategories = async () => {
   await apiWorks();
   await apiCategories();
   // console.log(categories);
+  let buttonForAll = document.createElement("button");
+  buttonForAll.innerText = "Tous";
+  sectionCategories.appendChild(buttonForAll);
+
   for (let category of categories) {
     console.log(category);
     // debugger;
     let newLi = document.createElement("li");
     let buttonsOfCategories = document.createElement("button");
-    let buttonForAll = document.createElement("button");
 
     buttonsOfCategories.innerText = category.name;
-    buttonForAll.innerText = "Tous";
 
     newLi.appendChild(buttonsOfCategories);
     sectionCategories.appendChild(newLi);
@@ -75,6 +77,14 @@ const displayCategories = async () => {
     buttonsOfCategories.addEventListener("mouseout", () => {
       buttonsOfCategories.style.background = "white";
       buttonsOfCategories.style.color = "#1D6154";
+    });
+    buttonForAll.addEventListener("mouseover", () => {
+      buttonForAll.style.background = "#1D6154";
+      buttonForAll.style.color = "white";
+    });
+    buttonForAll.addEventListener("mouseout", () => {
+      buttonForAll.style.background = "white";
+      buttonForAll.style.color = "#1D6154";
     });
   }
 };
