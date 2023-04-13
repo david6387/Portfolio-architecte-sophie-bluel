@@ -86,9 +86,18 @@ const displayCategories = async () => {
       buttonForAll.style.background = "white";
       buttonForAll.style.color = "#1D6154";
     });
+
+    buttonForAll.addEventListener("click", () => {
+      const worksAll = works.filter((work) => {
+        return works;
+      });
+      console.log(worksAll);
+    });
   }
 };
 displayCategories();
+
+// const boutonDescription = document.querySelector(".btn-nodesc");
 
 // Il faudra aussi gérer quand l'utilisateur clique sur un des boutons
 // avec un addEventListener pour trier en fonction de la catégorie.
