@@ -243,10 +243,10 @@ li:hover {
 	padding: 0 15px 0 15px;
 }
 
-/* .categories button:hover {
+.categories button:hover {
 	background: #1D6154;
 	color: white;
-} */
+}
 
 .gallery {
 	width: 100%;
@@ -313,4 +313,12 @@ footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
+}
+
+.display {
+	display: block;
+}
+
+.hidden {
+	display: none;
 }

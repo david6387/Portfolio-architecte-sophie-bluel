@@ -22,6 +22,8 @@ const displayWorks = async () => {
   for (let work of works) {
     // console.log(work);
     let figure = document.createElement("figure");
+    figure.setAttribute("data-categoryid", work.categoryId);
+    figure.setAttribute("class", "display");
     let img = document.createElement("img");
     let figcaption = document.createElement("figcaption");
 
@@ -55,43 +57,58 @@ const displayCategories = async () => {
   await apiWorks();
   await apiCategories();
   // console.log(categories);
-  let buttonForAll = document.createElement("button");
-  buttonForAll.innerText = "Tous";
-  sectionCategories.appendChild(buttonForAll);
-
+  // let buttonForAll = document.createElement("button");
+  // buttonForAll.innerText = "Tous";
+  // sectionCategories.appendChild(buttonForAll);
+  categories.push({ name: "Tous" });
+  console.log(categories);
   for (let category of categories) {
     console.log(category);
     // debugger;
     let newLi = document.createElement("li");
-    let buttonsOfCategories = document.createElement("button");
+    let buttonOfCategories = document.createElement("button");
 
-    buttonsOfCategories.innerText = category.name;
+    buttonOfCategories.innerText = category.name;
 
-    newLi.appendChild(buttonsOfCategories);
+    newLi.appendChild(buttonOfCategories);
     sectionCategories.appendChild(newLi);
 
-    buttonsOfCategories.addEventListener("mouseover", () => {
-      buttonsOfCategories.style.background = "#1D6154";
-      buttonsOfCategories.style.color = "white";
-    });
-    buttonsOfCategories.addEventListener("mouseout", () => {
-      buttonsOfCategories.style.background = "white";
-      buttonsOfCategories.style.color = "#1D6154";
-    });
-    buttonForAll.addEventListener("mouseover", () => {
-      buttonForAll.style.background = "#1D6154";
-      buttonForAll.style.color = "white";
-    });
-    buttonForAll.addEventListener("mouseout", () => {
-      buttonForAll.style.background = "white";
-      buttonForAll.style.color = "#1D6154";
-    });
-
-    buttonForAll.addEventListener("click", () => {
-      const worksAll = works.filter((work) => {
-        return works;
-      });
-      console.log(worksAll);
+    // buttonsOfCategories.addEventListener("mouseover", () => {
+    //   buttonsOfCategories.style.background = "#1D6154";
+    //   buttonsOfCategories.style.color = "white";
+    // });
+    // buttonsOfCategories.addEventListener("mouseout", () => {
+    //   buttonsOfCategories.style.background = "white";
+    //   buttonsOfCategories.style.color = "#1D6154";
+    // });
+    // buttonForAll.addEventListener("mouseover", () => {
+    //   buttonForAll.style.background = "#1D6154";
+    //   buttonForAll.style.color = "white";
+    // });
+    // buttonForAll.addEventListener("mouseout", () => {
+    //   buttonForAll.style.background = "white";
+    //   buttonForAll.style.color = "#1D6154";
+    // });
+    console.log(category.id);
+    buttonOfCategories.addEventListener("click", () => {
+      let figures = document.querySelectorAll("figure");
+      for (let figure of figures) {
+        if (category.id !== undefined) {
+          if (
+            parseInt(figure.getAttribute("data-categoryid")) === category.id
+          ) {
+            figure.classList.replace("display", "hidden");
+          } else {
+            figure.classList.replace("hidden", "display");
+          }
+        } else {
+          figure.classList.replace("hidden", "display");
+        }
+      }
+      // const worksAll = works.filter((work) => {
+      //   return works;
+      // });
+      // console.log(worksAll);
     });
   }
 };
