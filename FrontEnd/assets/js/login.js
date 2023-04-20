@@ -37,6 +37,7 @@ formLogin.addEventListener("submit", function (event) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        // vérifier erreurs ds data... créer div
       })
       .catch((error) => console.log(error));
   }
