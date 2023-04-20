@@ -60,7 +60,7 @@ const displayCategories = async () => {
   // let buttonForAll = document.createElement("button");
   // buttonForAll.innerText = "Tous";
   // sectionCategories.appendChild(buttonForAll);
-  categories.push({ name: "Tous" });
+  categories.unshift({ name: "Tous" });
   console.log(categories);
   for (let category of categories) {
     console.log(category);
