@@ -114,6 +114,8 @@ const displayCategories = async () => {
 };
 displayCategories();
 
+/* 'http://localhost:5678/api/users/login' */
+
 // const boutonDescription = document.querySelector(".btn-nodesc");
 
 // Il faudra aussi gérer quand l'utilisateur clique sur un des boutons
