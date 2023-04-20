@@ -16,6 +16,7 @@
 <body>
     <header>
         <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+
         <nav>
             <ul>
                 <li>projets</li>
@@ -30,12 +31,14 @@
             <h2>Log In</h2>
 
             <!-- /* 'http://localhost:5678/api/users/login' */ -->
-            <form action="" method="post">
+            <form action="" method="post" id="loginForm">
 
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email">
+                <div id="emailMsgErreur"></div>
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password" id="password">
+                <div id="pswMsgErreur"></div>
                 <input type="submit" value="Se connecter">
 
             </form>
@@ -52,7 +55,7 @@
             </ul>
         </nav>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 
 </html>
