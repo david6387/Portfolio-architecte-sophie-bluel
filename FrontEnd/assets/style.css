@@ -191,6 +191,15 @@ li:hover {
 	color: #B1663C;
 }
 
+li a {
+	color: black;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: #B1663C;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
