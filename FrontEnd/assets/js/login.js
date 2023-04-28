@@ -1,6 +1,8 @@
 const regexEmail = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}*/g;
 // /[a-zA-Z0-9._]*@[a-zA-Z0-9-]*\.[a-z]*/gm
 // [a-z]+\.[a-z0-9]+@[a-z]+\.[a-z]{2,3}
+const regexPassword =
+  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 const formLogin = document.querySelector("#loginForm");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
@@ -19,6 +21,18 @@ formLogin.addEventListener("submit", function (event) {
   } else {
     email.style.border = "2px solid green";
     emailError.innerText = "";
+    validationCompte++;
+  }
+
+  if (password.value === "") {
+    password.style.border = "2px solid red";
+    passwordError.innerText = "Vous devez renseigner ce champ";
+  } else if (regexPassword.test(password.value) === false) {
+    password.style.border = "2px solid red";
+    passwordError.innerText = "Le mot de passe n'est pas assez sécurisé";
+  } else {
+    password.style.border = "2px solid green";
+    passwordError.innerText = "";
     validationCompte++;
   }
 
