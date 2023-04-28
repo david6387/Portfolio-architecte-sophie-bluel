@@ -127,3 +127,20 @@ displayCategories();
 // Pour ensuite boucler sur toutes les figures et switcher entre
 // deux classes (une pour faire apparaître et une pour faire disparaitre)
 //  si l'identifiant correspond à la catégorie.
+let isConnected = sessionStorage.getItem("isConnected");
+console.log(isConnected);
+let token = sessionStorage.getItem("token");
+console.log(token);
+async function displayAdminContent() {
+  if (isConnected && token) {
+    console.log("connecté");
+    let btnConnexion = document.querySelector("#btn-login");
+    btnConnexion.innerText = "logout";
+    btnConnexion.addEventListener("click", function (event) {
+      sessionStorage.clear();
+    });
+    // gerer affichage
+  }
+}
+
+displayAdminContent();

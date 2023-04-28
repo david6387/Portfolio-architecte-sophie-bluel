@@ -1,13 +1,14 @@
-const regexEmail = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}*/g;
+const regexEmail = /^[a-z]+\.[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g;
 // /[a-zA-Z0-9._]*@[a-zA-Z0-9-]*\.[a-z]*/gm
 // [a-z]+\.[a-z0-9]+@[a-z]+\.[a-z]{2,3}
+// /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g
 const regexPassword =
   /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 const formLogin = document.querySelector("#loginForm");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const emailError = document.querySelector("#emailMsgErreur");
-const pswError = document.querySelector("#pswMsgErreur");
+const passwordError = document.querySelector("#pswMsgErreur");
 
 formLogin.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -27,9 +28,9 @@ formLogin.addEventListener("submit", function (event) {
   if (password.value === "") {
     password.style.border = "2px solid red";
     passwordError.innerText = "Vous devez renseigner ce champ";
-  } else if (regexPassword.test(password.value) === false) {
-    password.style.border = "2px solid red";
-    passwordError.innerText = "Le mot de passe n'est pas assez sécurisé";
+    // } else if (regexPassword.test(password.value) === false) {
+    //   password.style.border = "2px solid red";
+    //   passwordError.innerText = "Le mot de passe n'est pas assez sécurisé";
   } else {
     password.style.border = "2px solid green";
     passwordError.innerText = "";
@@ -51,6 +52,13 @@ formLogin.addEventListener("submit", function (event) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        if (data.message === "user not found") {
+          alert("Vote identifiant ou votre mot de passe ne sont pas corrects");
+        } else {
+          sessionStorage.setItem("isConnected", true);
+          sessionStorage.setItem("token", data.token);
+          location.assign("index.html");
+        }
         // vérifier erreurs ds data... créer div
       })
       .catch((error) => console.log(error));
