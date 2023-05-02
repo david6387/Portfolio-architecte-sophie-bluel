@@ -371,3 +371,38 @@ footer nav ul {
 #login a:hover {
 	color: #B1663C;
 }
+
+.edition {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	width: 100%;
+	height: 59px;
+	gap: 20px;
+
+}
+
+.edition button {
+	font-family: 'Work Sans';
+
+
+}
+
+#btn-edition {
+	border: none;
+	background: none;
+	color: white;
+	font-size: 16px;
+}
+
+#btn-changes {
+	border: none;
+	background: white;
+	color: black;
+	height: 38px;
+	width: 216px;
+	left: 688px;
+	border-radius: 60px;
+	font-size: 14px;
+}
