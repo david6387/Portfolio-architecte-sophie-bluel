@@ -407,11 +407,18 @@ footer nav ul {
 	font-size: 14px;
 }
 
-#btn-modification {
+.modal-btn {
 	border: none;
 	background: white;
 	color: black;
 	font-size: 14px;
 	font-family: 'Work Sans';
 	cursor: pointer;
+}
+
+.modal-container {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
 }
