@@ -406,3 +406,12 @@ footer nav ul {
 	border-radius: 60px;
 	font-size: 14px;
 }
+
+#btn-modification {
+	border: none;
+	background: white;
+	color: black;
+	font-size: 14px;
+	font-family: 'Work Sans';
+	cursor: pointer;
+}
