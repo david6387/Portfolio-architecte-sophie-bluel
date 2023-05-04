@@ -328,6 +328,11 @@ footer nav ul {
 	display: block;
 }
 
+.figure-modale img {
+	width: 50px;
+	height: 50px;
+}
+
 .hidden {
 	display: none;
 }
@@ -427,6 +432,11 @@ footer nav ul {
 
 .modal-container.active {
 	display: block;
+}
+
+.modal-container.hidden {
+
+	display: none;
 }
 
 .overlay {
