@@ -429,3 +429,35 @@ footer nav ul {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.3);
 }
+
+.modal {
+	width: 95%;
+	max-width: 500px;
+	min-width: 300px;
+	padding: 30px;
+	background: white;
+	border-radius: 10px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.close-modal {
+	border: none;
+	background: none;
+	position: absolute;
+	right: 36px;
+	top: 32px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.modal h1 {
+	font-family: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+	text-align: center;
+	color: black;
+	margin-top: 60px;
+}
