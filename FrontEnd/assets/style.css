@@ -329,13 +329,15 @@ footer nav ul {
 }
 
 .figure-modale img {
-	width: 80px;
-	height: 140px;
+	width: 100%;
+	height: 104px;
 }
 
 .gallery-modal {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 25px;
 }
 
 .hidden {
@@ -452,10 +454,8 @@ footer nav ul {
 }
 
 .modal {
-	width: 95%;
-	max-width: 500px;
-	min-width: 300px;
-	padding: 30px;
+	width: 17.5%;
+	padding: 100px 100px 48px 100px;
 	background: white;
 	border-radius: 10px;
 	position: absolute;
@@ -481,7 +481,7 @@ footer nav ul {
 	font-weight: 400;
 	text-align: center;
 	color: black;
-	margin-top: 30px;
+
 	margin-bottom: 52px;
 }
 
