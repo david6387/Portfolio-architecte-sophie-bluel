@@ -37,11 +37,28 @@ const displayWorksOnModal = async () => {
     figure.setAttribute("data-categoryid", work.categoryId);
     figure.setAttribute("class", "figure-modale");
     let img = document.createElement("img");
+    let icone = document.createElement("i");
+    icone.setAttribute("class", "fa-solid fa-trash-can");
+    icone.addEventListener("click", () => {
+      fetch(`http://localhost:5678/api/works/${work.id}`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+      }).then((response) => {
+        console.log(response.status);
+        displayWorks();
+        displayWorksOnModal();
+      });
+    });
 
     img.setAttribute("src", work.imageUrl);
     img.setAttribute("alt", work.title);
 
     figure.appendChild(img);
+    figure.appendChild(icone);
     galleryModal.appendChild(figure);
   }
 };
