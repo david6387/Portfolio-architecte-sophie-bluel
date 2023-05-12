@@ -1,5 +1,7 @@
 let works = [];
 
+// function stringToHTML(str, elementType) {}
+
 const sectionPortfolio = document.querySelector("#portfolio");
 // const gallery = document.querySelector("#portfolio .gallery");
 const gallery = document.getElementsByClassName("gallery")[0];
@@ -35,6 +37,15 @@ const displayWorks = async () => {
     figure.appendChild(img);
     figure.appendChild(figcaption);
     gallery.appendChild(figure);
+
+    //     const workElement = `
+    //     <figure class="display" data-categoryid=${work.categoryId}>
+    //       <img class="test" src=${work.imageUrl} alt=${work.title} />
+    //       <figcaption>${work.title}</figcaption>
+    //     </figure>
+    // `;
+
+    // gallery.insertAdjacentHTML("beforeend", workElement);
   }
 };
 displayWorks();
@@ -73,22 +84,6 @@ const displayCategories = async () => {
     newLi.appendChild(buttonOfCategories);
     sectionCategories.appendChild(newLi);
 
-    // buttonsOfCategories.addEventListener("mouseover", () => {
-    //   buttonsOfCategories.style.background = "#1D6154";
-    //   buttonsOfCategories.style.color = "white";
-    // });
-    // buttonsOfCategories.addEventListener("mouseout", () => {
-    //   buttonsOfCategories.style.background = "white";
-    //   buttonsOfCategories.style.color = "#1D6154";
-    // });
-    // buttonForAll.addEventListener("mouseover", () => {
-    //   buttonForAll.style.background = "#1D6154";
-    //   buttonForAll.style.color = "white";
-    // });
-    // buttonForAll.addEventListener("mouseout", () => {
-    //   buttonForAll.style.background = "white";
-    //   buttonForAll.style.color = "#1D6154";
-    // });
     console.log(category.id);
     buttonOfCategories.addEventListener("click", () => {
       let figures = document.querySelectorAll("figure");
@@ -144,6 +139,9 @@ async function displayAdminContent() {
     editionBanner.classList.replace("hidden", "display-flex");
     const editionButton = document.querySelector(".modal-btn");
     editionButton.classList.replace("hidden", "display-inlineBlock");
+    const buttonsCategories = document.querySelector(".categories");
+    console.log(buttonsCategories);
+    buttonsCategories.classList.replace("display-flex", "hidden");
   }
 }
 
