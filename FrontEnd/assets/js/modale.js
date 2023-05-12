@@ -46,3 +46,6 @@ const displayWorksOnModal = async () => {
   }
 };
 displayWorksOnModal();
+
+// <i class="fa-solid fa-trash-can"></i>
+//  <i class="fa-solid fa-arrows-up-down-left-right"></i>
