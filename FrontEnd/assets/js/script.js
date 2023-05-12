@@ -130,15 +130,15 @@ displayCategories();
 let isConnected = sessionStorage.getItem("isConnected");
 console.log(isConnected);
 let token = sessionStorage.getItem("token");
-console.log(token);
+
 async function displayAdminContent() {
   if (isConnected && token) {
-    console.log("connecté");
     const btnConnexion = document.querySelector("#btn-login");
     btnConnexion.innerText = "logout";
     btnConnexion.addEventListener("click", function (event) {
       sessionStorage.clear();
     });
+
     // gerer affichage
     const editionBanner = document.querySelector(".edition");
     editionBanner.classList.replace("hidden", "display-flex");
