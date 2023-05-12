@@ -134,12 +134,16 @@ console.log(token);
 async function displayAdminContent() {
   if (isConnected && token) {
     console.log("connecté");
-    let btnConnexion = document.querySelector("#btn-login");
+    const btnConnexion = document.querySelector("#btn-login");
     btnConnexion.innerText = "logout";
     btnConnexion.addEventListener("click", function (event) {
       sessionStorage.clear();
     });
     // gerer affichage
+    const editionBanner = document.querySelector(".edition");
+    editionBanner.classList.replace("hidden", "display-flex");
+    const editionButton = document.querySelector(".modal-btn");
+    editionButton.classList.replace("hidden", "display-inlineBlock");
   }
 }
 
