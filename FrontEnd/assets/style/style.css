@@ -109,6 +109,7 @@ section {
 
 body {
 	line-height: 1;
+	background: #FFFEF8;
 }
 
 ol,
@@ -136,8 +137,9 @@ table {
 
 /** end reset css**/
 #container {
-	max-width: 1140px;
+	max-width: 940px;
 	margin: auto;
+	padding: 0 30px;
 	font-family: 'Work Sans';
 	font-size: 14px;
 }
@@ -145,27 +147,33 @@ table {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px auto;
+	max-width: 1140px;
+	padding: 0 30px;
+	font-family: 'Work Sans';
+	font-size: 14px;
 }
 
 section {
-	margin: 50px 0
+	margin: 50px 0;
 }
 
-h1 {
+#logo {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: #B1663C;
+	line-height: 24px;
 }
 
-h1>span {
+#logo>span {
 	font-family: 'Work Sans';
 	font-size: 10px;
-	letter-spacing: 0.1em;
-	;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
 }
 
 h2 {
@@ -179,11 +187,11 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
+	gap: 40px;
 
 }
 
 nav li {
-	padding: 0 10px;
 	font-size: 1.2em;
 }
 
@@ -203,20 +211,20 @@ li a:hover {
 #introduction {
 	display: flex;
 	align-items: center;
+	gap: 70px;
 }
 
 #introduction figure {
-	flex: 1
+	width: 50%;
 }
 
 #introduction img {
 	display: block;
-	margin: auto;
-	width: 80%;
+	width: 100%;
 }
 
 #introduction article {
-	flex: 1
+	width: 50%;
 }
 
 #introduction h2 {
@@ -224,12 +232,22 @@ li a:hover {
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
+	line-height: 16px;
+}
+
+.portfolio-title {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5.625em;
+	gap: 30px;
 }
 
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 
 .categories {
@@ -267,7 +285,6 @@ li a:hover {
 
 .gallery img {
 	width: 100%;
-
 }
 
 #contact {
@@ -307,13 +324,15 @@ li a:hover {
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"] {
+#submit {
 	font-family: 'Syne';
 	font-weight: 700;
+	font-size: 14px;
+	height: inherit;
 	color: white;
+	padding: 10px 60px;
 	background-color: #1D6154;
 	margin: 2em auto;
-	width: 180px;
 	text-align: center;
 	border-radius: 60px;
 }
@@ -323,8 +342,6 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-
-
 
 .display-block {
 	display: block;

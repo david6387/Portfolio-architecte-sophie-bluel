@@ -137,7 +137,7 @@ async function displayAdminContent() {
     // gerer affichage
     const editionBanner = document.querySelector(".edition");
     editionBanner.classList.replace("hidden", "display-flex");
-    const editionButton = document.querySelector(".modal-btn");
+    const editionButton = document.querySelector(".modal-trigger");
     editionButton.classList.replace("hidden", "display-inlineBlock");
     const buttonsCategories = document.querySelector(".categories");
     console.log(buttonsCategories);
