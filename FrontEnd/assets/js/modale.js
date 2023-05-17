@@ -4,6 +4,7 @@ const btnCloseModal = document.querySelector(".close-modal");
 const secondModal = document.querySelector(".modalPartTwo");
 const secondModalTrigger = document.querySelector(".modalPartTwo-trigger");
 const overlay = document.querySelector(".overlay");
+const previousModal = document.querySelector(".previous-modal");
 
 modalTriggers.forEach((trigger) =>
   trigger.addEventListener("click", toggleModal)
