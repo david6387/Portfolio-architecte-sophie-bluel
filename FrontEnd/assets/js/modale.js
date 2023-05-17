@@ -2,9 +2,10 @@ const modalContainer = document.querySelector(".modal-container");
 const modalTriggers = document.querySelectorAll(".modal-trigger");
 const btnCloseModal = document.querySelector(".close-modal");
 const secondModal = document.querySelector(".modalPartTwo");
-const secondModalTrigger = document.querySelector(".modalPartTwo-trigger");
+const secondModalTrigger = document.querySelector(".add-photo-btn");
 const overlay = document.querySelector(".overlay");
 const previousModal = document.querySelector(".previous-modal");
+const deleteGallery = document.querySelector(".supprimer");
 
 modalTriggers.forEach((trigger) =>
   trigger.addEventListener("click", toggleModal)
