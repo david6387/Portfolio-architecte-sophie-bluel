@@ -13,8 +13,13 @@
     right: 5%
 }
 
+.fa-arrows-up-down-left-right {
+    position: absolute;
+    top: 5%;
+    right: 35%;
+}
+
 .gallery-modal {
-    width: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 7px;

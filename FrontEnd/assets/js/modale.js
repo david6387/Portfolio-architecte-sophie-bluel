@@ -19,15 +19,15 @@ overlay.addEventListener("click", function (event) {
   modalContainer.classList.add("hidden");
   console.log(event);
 });
-previousModal.addEventListener("click", function (event) {
-  secondModal.classList.remove("active");
-  secondModal.classList.add("hidden");
-});
+// previousModal.addEventListener("click", function (event) {
+//   secondModal.classList.remove("active");
+//   secondModal.classList.add("hidden");
+// });
 function toggleModal() {
   modalContainer.classList.add("active");
   modalContainer.classList.remove("hidden");
 }
-function toggleSecondModal() {}
+// function toggleSecondModal() {}
 
 //--------------------------------------/
 
@@ -51,6 +51,8 @@ const displayWorksOnModal = async () => {
     figure.setAttribute("data-categoryid", work.categoryId);
     figure.setAttribute("class", "figure-modale");
     let img = document.createElement("img");
+    let iconeCroix = document.createElement("i");
+    iconeCroix.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
     let icone = document.createElement("i");
     icone.setAttribute("class", "fa-solid fa-trash-can");
     icone.addEventListener("click", () => {
@@ -72,6 +74,7 @@ const displayWorksOnModal = async () => {
     img.setAttribute("alt", work.title);
 
     figure.appendChild(img);
+    figure.appendChild(iconeCroix);
     figure.appendChild(icone);
     galleryModal.appendChild(figure);
   }
