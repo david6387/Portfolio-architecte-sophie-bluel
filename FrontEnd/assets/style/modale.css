@@ -24,14 +24,17 @@
     margin-bottom: 40px;
 }
 
+.line {
+    border-bottom: 1px solid #b3b3b3;
+    padding-bottom: 45px;
+    margin-bottom: 30px;
+}
+
 .form-modal {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #b3b3b3;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
 }
 
 
