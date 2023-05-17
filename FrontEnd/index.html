@@ -122,26 +122,28 @@
 			</section>
 		</main>
 		<div class="modal-container hidden">
-			<div class="modal">
+			<!-- <div class="modal">
 				<button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
 				<h1>Galerie photo</h1>
 				<div class="gallery-modal"></div>
 				<button class="add-photo-btn modalPartTwo-trigger">Ajouter une photo</button>
 				<p>Supprimer la galerie</p>
+			</div> -->
+			<div class="modalPartTwo">
+				<button class="previous-modal"><i class="fa-solid fa-arrow-left"></i></button>
+				<button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+				<h1>Ajouter photo</h1>
+				<form action="" method="POST" enctype="multipart/form-data">
+					<label for="img-input">+ Ajouter photo</label>
+					<input type="file" name="image" id="img-input" accept="image/png, image/jpeg, image/jpg">
+					<label for="project-title">Titre</label>
+					<input type="text" name="project-name" id="project-title">
+					<label for="select-category">Categorie</label>
+					<select name="select-category" id="select-category"></select>
+					<button type="submit" class="validation-btn">Valider</button>
+				</form>
 			</div>
-			<!-- <div class="modalPartTwo">
-					<button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
-					<form action="" method="POST" enctype="multipart/form-data">
-						<label for="img-input">+ Ajouter photo</label>
-						<input type="file" name="image" id="img-input" accept="image/png, image/jpeg, image/jpg">
-						<label for="project-title">Titre</label>
-						<input type="text" name="project-name" id="project-title">
-						<label for="select-category">Categorie</label>
-						<select name="select-category" id="select-category"></select>
-						<button type="submit">Valider</button>
-					</form>
-				</div> -->
-
+			<!-- "fa-sharp fa-regular fa-image" -->
 			<div class="overlay"></div>
 
 		</div>

@@ -22,6 +22,7 @@ function toggleModal() {
   modalContainer.classList.add("active");
   modalContainer.classList.remove("hidden");
 }
+function toggleSecondModal() {}
 
 //--------------------------------------/
 

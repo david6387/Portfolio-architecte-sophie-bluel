@@ -101,17 +101,32 @@
     z-index: 10;
 }
 
+.modalPartTwo form {
+    display: flex;
+    flex-direction: column;
+}
+
 .close-modal {
     border: none;
     background: none;
     position: absolute;
     right: 36px;
     top: 32px;
-
     cursor: pointer;
 }
 
-.modal h1 {
+.previous-modal {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    cursor: pointer;
+
+}
+
+.modal h1,
+.modalPartTwo h1 {
     font-family: Work Sans;
     font-size: 26px;
     font-weight: 400;
@@ -121,7 +136,8 @@
     margin-bottom: 52px;
 }
 
-.add-photo-btn {
+.add-photo-btn,
+.validation-btn {
     font-family: 'Syne';
     font-weight: 700;
     color: white;
