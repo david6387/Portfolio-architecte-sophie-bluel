@@ -1,11 +1,19 @@
 const modalContainer = document.querySelector(".modal-container");
 const modalTriggers = document.querySelectorAll(".modal-trigger");
 const btnCloseModal = document.querySelector(".close-modal");
+const secondModal = document.querySelector(".modalPartTwo");
+const secondModalTrigger = document.querySelector(".modalPartTwo-trigger");
+const overlay = document.querySelector(".overlay");
 
 modalTriggers.forEach((trigger) =>
   trigger.addEventListener("click", toggleModal)
 );
 btnCloseModal.addEventListener("click", function (event) {
+  modalContainer.classList.remove("active");
+  modalContainer.classList.add("hidden");
+  console.log(event);
+});
+overlay.addEventListener("click", function (event) {
   modalContainer.classList.remove("active");
   modalContainer.classList.add("hidden");
   console.log(event);
