@@ -6,26 +6,32 @@ const secondModalTrigger = document.querySelector(".add-photo-btn");
 const overlay = document.querySelector(".overlay");
 const previousModal = document.querySelector(".previous-modal");
 const deleteGallery = document.querySelector(".supprimer");
+const modalPrimary = document.querySelector(".modal");
+const validationButton = document.querySelector(".validation-btn");
 
 modalTriggers.forEach((trigger) =>
   trigger.addEventListener("click", toggleModal)
 );
 btnCloseModal.addEventListener("click", function (event) {
-  modalContainer.classList.remove("active");
+  modalContainer.classList.remove("display-block");
   modalContainer.classList.add("hidden");
   console.log(event);
 });
 overlay.addEventListener("click", function (event) {
-  modalContainer.classList.remove("active");
+  modalContainer.classList.remove("display-block");
   modalContainer.classList.add("hidden");
   console.log(event);
 });
-// previousModal.addEventListener("click", function (event) {
-//   secondModal.classList.remove("active");
-//   secondModal.classList.add("hidden");
-// });
+previousModal.addEventListener("click", function (event) {
+  modalPrimary.classList.toggle("hidden");
+  secondModal.classList.toggle("hidden");
+});
+secondModalTrigger.addEventListener("click", function (event) {
+  modalPrimary.classList.toggle("hidden");
+  secondModal.classList.toggle("hidden");
+});
 function toggleModal() {
-  modalContainer.classList.add("active");
+  modalContainer.classList.add("display-block");
   modalContainer.classList.remove("hidden");
 }
 // function toggleSecondModal() {}
@@ -84,3 +90,25 @@ displayWorksOnModal();
 
 // <i class="fa-solid fa-trash-can"></i>
 //  <i class="fa-solid fa-arrows-up-down-left-right"></i>
+// Formulaire
+
+const selectCategory = document.querySelector("#select-category");
+
+async function showCategory() {
+  await apiCategories();
+  for (let category of categories) {
+    let option = document.createElement("option");
+    option.value = category.id;
+    option.innerText = category.name;
+    selectCategory.appendChild(option);
+  }
+}
+
+showCategory();
+
+validationButton.addEventListener("click", function (event) {
+  console.log(document.querySelector("#project-title").value);
+  console.log(document.querySelector("#img-input").value);
+  console.log(document.querySelector("#select-category").value);
+  event.preventDefault();
+});

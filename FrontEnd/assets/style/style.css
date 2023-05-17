@@ -340,21 +340,12 @@ footer nav ul {
 	margin: 2em
 }
 
-.display-block {
-	display: block;
-}
-
-.hidden {
-	display: none;
-}
 
 .display-inlineBlock {
 	display: inline-block;
 }
 
-.display-flex {
-	display: flex;
-}
+
 
 
 #login {
