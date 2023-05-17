@@ -305,13 +305,6 @@ li a:hover {
 	margin-bottom: 20px;
 }
 
-#contact form {
-	text-align: left;
-	margin-top: 30px;
-	display: flex;
-	flex-direction: column;
-}
-
 #contact input {
 	height: 50px;
 	font-size: 1.2em;
@@ -378,21 +371,26 @@ footer nav ul {
 	margin-bottom: 20px;
 }
 
-#login form {
+#contact form,
+#login form,
+.modalPartTwo form {
 	text-align: left;
 	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 }
 
-#login input {
+#login input,
+.form-modal input,
+.form-modal select {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-#login label {
+#login label,
+.form-modal label {
 	margin: 2em 0 1em 0;
 }
 
