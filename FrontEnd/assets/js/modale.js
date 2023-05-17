@@ -19,6 +19,10 @@ overlay.addEventListener("click", function (event) {
   modalContainer.classList.add("hidden");
   console.log(event);
 });
+previousModal.addEventListener("click", function (event) {
+  secondModal.classList.remove("active");
+  secondModal.classList.add("hidden");
+});
 function toggleModal() {
   modalContainer.classList.add("active");
   modalContainer.classList.remove("hidden");

@@ -24,6 +24,29 @@
     margin-bottom: 40px;
 }
 
+.add-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #E8F1F7;
+    border-radius: 3px;
+    padding: 30px;
+}
+
+.add-picture i {
+    font-size: 50px;
+    color: #B9C5CC;
+}
+
+.picture-size {
+    font-family: Work Sans;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
 .line {
     border-bottom: 1px solid #b3b3b3;
     padding-bottom: 45px;
@@ -161,6 +184,21 @@
     border: none;
     cursor: pointer;
     margin-bottom: 38px;
+}
+
+.add-picture-btn {
+    font-family: 'Syne';
+    font-weight: 700;
+    color: #1D6154;
+    background: #CBD6DC;
+    font-size: 14px;
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 7px;
+    margin-top: 20px;
 }
 
 .modal p {

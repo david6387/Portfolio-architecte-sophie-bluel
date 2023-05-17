@@ -129,16 +129,20 @@
 				<button class="add-photo-btn modalPartTwo-trigger">Ajouter une photo</button>
 				<p>Supprimer la galerie</p>
 			</div> -->
-			<div class="modalPartTwo">
+			<div class="modalPartTwo hidden">
 				<button class="previous-modal"><i class="fa-solid fa-arrow-left"></i></button>
 				<button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
 				<h1>Ajouter photo</h1>
 				<div class="form-modal">
 					<form action="" method="POST" enctype="multipart/form-data">
-						<label for="img-input">+ Ajouter photo</label>
+						<label class="add-picture" for="img-input">
+							<i class="fa-sharp fa-regular fa-image"></i>
+							<p class="add-picture-btn">+ Ajouter photo</p>
+							<p class="picture-size">jpg, png : 4mo max</p>
+						</label>
 						<input type="file" name="image" class="hidden" id="img-input"
 							accept="image/png, image/jpeg, image/jpg">
-						<button onclick="file.click()">+ Ajouter photo</button>
+						<!-- <button onclick="file.click()">+ Ajouter photo</button> -->
 						<label for="project-title">Titre</label>
 						<input type="text" name="project-name" id="project-title">
 						<label for="select-category">Categorie</label>
