@@ -10,13 +10,19 @@
 .fa-trash-can {
     position: absolute;
     top: 5%;
-    right: 5%
+    right: 10%;
+    color: white;
+    width: 9px;
+
 }
 
 .fa-arrows-up-down-left-right {
     position: absolute;
     top: 5%;
     right: 35%;
+    color: white;
+    width: 9px;
+
 }
 
 .gallery-modal {
@@ -54,17 +60,14 @@
 
 .line {
     border-bottom: 1px solid #b3b3b3;
-    padding-bottom: 45px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .form-modal {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
-
 
 
 .edition {
@@ -130,11 +133,11 @@
 }
 
 .modal,
-.modalPartTwo {
+.modal-two {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 100px 48px 100px;
+    padding: 100px 100px 50px 100px;
     background: white;
     border-radius: 10px;
     position: fixed;
@@ -143,6 +146,9 @@
     transform: translate(-50%, -50%);
     z-index: 10;
 }
+
+
+.modal-two form {}
 
 
 
@@ -166,14 +172,14 @@
 }
 
 .modal h1,
-.modalPartTwo h1 {
+.modal-two h1 {
     font-family: Work Sans;
     font-size: 26px;
     font-weight: 400;
     text-align: center;
     color: black;
 
-    margin-bottom: 52px;
+    margin-bottom: 50px;
 }
 
 .add-photo-btn,
@@ -188,7 +194,7 @@
     border-radius: 60px;
     border: none;
     cursor: pointer;
-    margin-bottom: 38px;
+
 }
 
 .add-picture-btn {
@@ -212,6 +218,7 @@
     color: #D65353;
     text-align: center;
     cursor: pointer;
+    margin-top: 40px;
 }
 
 

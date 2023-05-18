@@ -363,8 +363,7 @@ footer nav ul {
 }
 
 #contact form,
-#login form,
-.modalPartTwo form {
+#login form {
 	text-align: left;
 	margin-top: 30px;
 	display: flex;
@@ -380,9 +379,16 @@ footer nav ul {
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-#login label,
-.form-modal label {
+#login label {
 	margin: 2em 0 1em 0;
+}
+
+.form-modal label:not(.add-picture) {
+	margin-bottom: 1em;
+}
+
+.form-modal label:not(.add-picture) {
+	margin-top: 2em;
 }
 
 #login a {
