@@ -135,7 +135,7 @@ async function displayAdminContent() {
     const sectionIntroduction = document.querySelector("#introduction");
     const modifButtons = sectionIntroduction.querySelectorAll(".modify-btn");
     modifButtons.forEach(function (button) {
-      button.classList.replace("hidden", "display-flex");
+      button.classList.replace("hidden", "display-block");
     });
   }
 }

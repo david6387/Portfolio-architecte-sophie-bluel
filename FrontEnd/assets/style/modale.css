@@ -234,3 +234,11 @@
 .display-flex {
     display: flex;
 }
+
+#introduction>figure>button {
+    padding: 15px 0 0 0;
+}
+
+#introduction>article>button {
+    padding: 0 0 1em 0;
+}
