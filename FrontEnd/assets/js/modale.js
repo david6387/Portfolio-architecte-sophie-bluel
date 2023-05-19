@@ -62,6 +62,8 @@ const displayWorksOnModal = async () => {
     figure.setAttribute("data-categoryid", work.categoryId);
     figure.setAttribute("class", "figure-modale");
     let img = document.createElement("img");
+    let txt = document.createElement("p");
+    txt.innerText = "éditer";
     let iconeCroix = document.createElement("i");
     iconeCroix.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
     let icone = document.createElement("i");
@@ -85,6 +87,7 @@ const displayWorksOnModal = async () => {
     img.setAttribute("alt", work.title);
 
     figure.appendChild(img);
+    figure.appendChild(txt);
     figure.appendChild(iconeCroix);
     figure.appendChild(icone);
     galleryModal.appendChild(figure);
