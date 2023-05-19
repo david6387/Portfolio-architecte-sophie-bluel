@@ -9,20 +9,32 @@
 
 .fa-trash-can {
     position: absolute;
-    top: 5%;
-    right: 10%;
+    top: 10%;
+    right: 20%;
     color: white;
     width: 9px;
 
 }
 
+.fa-trash-can:before {
+
+    background: black;
+    padding: 2px 3px;
+    border-radius: 2px;
+}
+
 .fa-arrows-up-down-left-right {
     position: absolute;
-    top: 5%;
-    right: 35%;
+    top: 10%;
+    right: 50%;
     color: white;
     width: 9px;
+}
 
+.fa-arrows-up-down-left-right:before {
+    background: black;
+    padding: 2px;
+    border-radius: 2px;
 }
 
 .gallery-modal {
