@@ -34,7 +34,6 @@ function toggleModal() {
   modalContainer.classList.add("display-block");
   modalContainer.classList.remove("hidden");
 }
-// function toggleSecondModal() {}
 
 //--------------------------------------/
 
@@ -88,9 +87,7 @@ const displayWorksOnModal = async () => {
 };
 displayWorksOnModal();
 
-// <i class="fa-solid fa-trash-can"></i>
-//  <i class="fa-solid fa-arrows-up-down-left-right"></i>
-// Formulaire
+// Formulaire ---------------------------------------
 
 const selectCategory = document.querySelector("#select-category");
 

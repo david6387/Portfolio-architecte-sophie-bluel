@@ -72,9 +72,9 @@ const displayCategories = async () => {
   // buttonForAll.innerText = "Tous";
   // sectionCategories.appendChild(buttonForAll);
   categories.unshift({ name: "Tous" });
-  console.log(categories);
+  // console.log(categories);
   for (let category of categories) {
-    console.log(category);
+    // console.log(category);
     // debugger;
     let newLi = document.createElement("li");
     let buttonOfCategories = document.createElement("button");
@@ -109,19 +109,8 @@ const displayCategories = async () => {
 };
 displayCategories();
 
-/* 'http://localhost:5678/api/users/login' */
+/------------------------------------------/;
 
-// const boutonDescription = document.querySelector(".btn-nodesc");
-
-// Il faudra aussi gérer quand l'utilisateur clique sur un des boutons
-// avec un addEventListener pour trier en fonction de la catégorie.
-
-// Bien penser en amont à mettre un attribut custom qui contiendra
-// l'identifiant de la catégorie sur chaque élément figure.
-
-// Pour ensuite boucler sur toutes les figures et switcher entre
-// deux classes (une pour faire apparaître et une pour faire disparaitre)
-//  si l'identifiant correspond à la catégorie.
 let isConnected = sessionStorage.getItem("isConnected");
 console.log(isConnected);
 let token = sessionStorage.getItem("token");
@@ -142,6 +131,12 @@ async function displayAdminContent() {
     const buttonsCategories = document.querySelector(".categories");
     console.log(buttonsCategories);
     buttonsCategories.classList.replace("display-flex", "hidden");
+
+    const sectionIntroduction = document.querySelector("#introduction");
+    const modifButtons = sectionIntroduction.querySelectorAll(".modify-btn");
+    modifButtons.forEach(function (button) {
+      button.classList.replace("hidden", "display-flex");
+    });
   }
 }
 
