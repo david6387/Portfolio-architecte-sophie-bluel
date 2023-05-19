@@ -2,6 +2,7 @@ const modalContainer = document.querySelector(".modal-container");
 const modalTriggers = document.querySelectorAll(".modal-trigger");
 const btnCloseModal = document.querySelector(".close-modal");
 const secondModal = document.querySelector(".modal-two");
+const btnCloseModalTwo = secondModal.querySelector(".close-modal");
 const secondModalTrigger = document.querySelector(".add-photo-btn");
 const overlay = document.querySelector(".overlay");
 const previousModal = document.querySelector(".previous-modal");
@@ -16,6 +17,10 @@ btnCloseModal.addEventListener("click", function (event) {
   modalContainer.classList.remove("display-block");
   modalContainer.classList.add("hidden");
   console.log(event);
+});
+btnCloseModalTwo.addEventListener("click", function (event) {
+  modalContainer.classList.remove("display-block");
+  modalContainer.classList.add("hidden");
 });
 overlay.addEventListener("click", function (event) {
   modalContainer.classList.remove("display-block");
