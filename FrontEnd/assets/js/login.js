@@ -4,7 +4,7 @@ const regexEmail = /^[a-z]+\.[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g;
 // /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g
 const regexPassword =
   /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-const formLogin = document.querySelector("#loginForm");
+const formLogin = document.querySelector("#login-form");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const emailError = document.querySelector("#emailMsgErreur");

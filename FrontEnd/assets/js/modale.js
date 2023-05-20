@@ -97,7 +97,7 @@ displayWorksOnModal();
 
 // Formulaire ---------------------------------------
 
-const selectCategory = document.querySelector("#select-category");
+const selectCategory = document.querySelector("#project-category");
 
 async function showCategory() {
   await apiCategories();
@@ -116,4 +116,21 @@ validationButton.addEventListener("click", function (event) {
   console.log(document.querySelector("#img-input").value);
   console.log(document.querySelector("#select-category").value);
   event.preventDefault();
+});
+
+const formModal = document.querySelector(".form-modal");
+const projectImage = document.querySelector("#img-input");
+const projectTitle = document.querySelector("#project-title");
+const projectCategory = document.querySelector("#project-category");
+const titleError = document.querySelector("#project-title-error");
+const categoryError = document.querySelector("#project-category-error");
+const imageError = document.querySelector("#image-error");
+
+formModal.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (projectTitle.value === "") {
+    projectTitle.style.border = "2px solid red";
+    titleError.innerText = "Ce champ ne doit pas être vide";
+  }
 });

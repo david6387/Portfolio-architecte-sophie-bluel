@@ -161,8 +161,7 @@
     cursor: move;
 }
 
-.add-photo-btn,
-.validation-btn {
+.add-photo-btn {
     font-family: 'Syne';
     font-weight: 700;
     color: white;
@@ -250,6 +249,19 @@
     padding-bottom: 40px;
     margin-bottom: 40px;
     width: 383px;
+}
+
+.validation-btn {
+    font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background: #A7A7A7;
+    font-size: 14px;
+    padding: 15px 50px;
+    text-align: center;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
 }
 
 /* -------------------------------------------- */
