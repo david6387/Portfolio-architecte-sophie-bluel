@@ -117,9 +117,9 @@ let token = sessionStorage.getItem("token");
 
 async function displayAdminContent() {
   if (isConnected && token) {
-    const btnConnexion = document.querySelector("#btn-login");
-    btnConnexion.innerText = "logout";
-    btnConnexion.addEventListener("click", function (event) {
+    const connexionButton = document.querySelector("#btn-login");
+    connexionButton.innerText = "logout";
+    connexionButton.addEventListener("click", function (event) {
       sessionStorage.clear();
     });
 
