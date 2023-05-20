@@ -56,6 +56,13 @@
     margin-bottom: 40px;
 }
 
+.gallery-modal p {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+
 .add-picture {
     display: flex;
     flex-direction: column;
@@ -231,7 +238,7 @@
     margin-top: 20px;
 }
 
-.modal p {
+.empty-galery {
     font-size: 14px;
     font-family: 'Syne';
     color: #D65353;
