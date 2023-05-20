@@ -1,104 +1,4 @@
-.figure-modale {
-    position: relative;
-}
-
-
-.figure-modale img {
-    width: 100%;
-}
-
-.fa-trash-can {
-    position: absolute;
-    top: 10%;
-    right: 20%;
-    color: white;
-    width: 9px;
-
-}
-
-.fa-trash-can:before {
-
-    background: black;
-    padding: 2px 3px;
-    border-radius: 2px;
-}
-
-.fa-trash-can:hover {
-    cursor: pointer;
-}
-
-.fa-arrows-up-down-left-right {
-    position: absolute;
-    top: 10%;
-    right: 50%;
-    color: white;
-    width: 9px;
-}
-
-.fa-arrows-up-down-left-right:before {
-    background: black;
-    padding: 2px;
-    border-radius: 2px;
-}
-
-.fa-arrows-up-down-left-right:hover {
-    cursor: move;
-}
-
-
-.gallery-modal {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 7px;
-    grid-row-gap: 25px;
-    border-bottom: 1px solid #b3b3b3;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
-}
-
-.gallery-modal p {
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-}
-
-.add-picture {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #E8F1F7;
-    border-radius: 3px;
-    padding: 30px;
-}
-
-.add-picture i {
-    font-size: 50px;
-    color: #B9C5CC;
-}
-
-.picture-size {
-    font-family: Work Sans;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 12px;
-    letter-spacing: 0em;
-    text-align: center;
-}
-
-.line {
-    border-bottom: 1px solid #b3b3b3;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
-    width: 383px;
-}
-
-.form-modal {
-    display: flex;
-    flex-direction: column;
-}
-
-
+/* -------------------------------------------- */
 .edition {
     position: relative;
     justify-content: center;
@@ -134,6 +34,7 @@
     font-size: 14px;
 }
 
+/* -------------------------------------------- */
 .modify-btn {
     border: none;
     background: transparent;
@@ -143,6 +44,15 @@
     cursor: pointer;
 }
 
+#introduction>figure>button {
+    padding: 1em 0 0 0;
+}
+
+#introduction>article>button {
+    padding: 0 0 1em 0;
+}
+
+/* -------------------------------------------- */
 .modal-container {
     position: fixed;
     top: 0;
@@ -151,16 +61,7 @@
     height: 100%;
 }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 0;
-}
-
+/* -------------------------------------------- */
 .modal,
 .modal-two {
     display: flex;
@@ -176,8 +77,6 @@
     z-index: 10;
 }
 
-
-
 .close-modal {
     border: none;
     background: none;
@@ -185,16 +84,6 @@
     right: 36px;
     top: 32px;
     cursor: pointer;
-}
-
-.previous-modal {
-    border: none;
-    background: none;
-    position: absolute;
-    top: 32px;
-    left: 36px;
-    cursor: pointer;
-
 }
 
 .modal h1,
@@ -206,6 +95,70 @@
     color: black;
 
     margin-bottom: 50px;
+}
+
+/* -------------------------------------------- */
+.gallery-modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 7px;
+    grid-row-gap: 25px;
+    border-bottom: 1px solid #b3b3b3;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.gallery-modal p {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.figure-modale {
+    position: relative;
+}
+
+
+.figure-modale img {
+    width: 100%;
+}
+
+.fa-trash-can {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    color: white;
+    width: 9px;
+}
+
+.fa-trash-can:before {
+
+    background: black;
+    padding: 2px 3px;
+    border-radius: 2px;
+}
+
+.fa-trash-can:hover {
+    cursor: pointer;
+}
+
+.fa-arrows-up-down-left-right {
+    position: absolute;
+    top: 10%;
+    right: 50%;
+    color: white;
+    width: 9px;
+}
+
+.fa-arrows-up-down-left-right:before {
+    background: black;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.fa-arrows-up-down-left-right:hover {
+    cursor: move;
 }
 
 .add-photo-btn,
@@ -220,7 +173,44 @@
     border-radius: 60px;
     border: none;
     cursor: pointer;
+}
 
+.empty-gallery {
+    font-size: 14px;
+    font-family: 'Syne';
+    color: #D65353;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+/* -------------------------------------------- */
+.previous-modal {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    cursor: pointer;
+}
+
+.form-modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #E8F1F7;
+    border-radius: 3px;
+    padding: 30px;
+}
+
+.add-picture i {
+    font-size: 50px;
+    color: #B9C5CC;
 }
 
 .add-picture-btn {
@@ -238,16 +228,34 @@
     margin-top: 20px;
 }
 
-.empty-galery {
-    font-size: 14px;
-    font-family: 'Syne';
-    color: #D65353;
+.picture-size {
+    font-family: Work Sans;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
     text-align: center;
-    cursor: pointer;
-    margin-top: 40px;
 }
 
+.line {
+    border-bottom: 1px solid #b3b3b3;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    width: 383px;
+}
 
+/* -------------------------------------------- */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+/* -------------------------------------------- */
 .display-block {
     display: block;
 }
@@ -258,12 +266,4 @@
 
 .display-flex {
     display: flex;
-}
-
-#introduction>figure>button {
-    padding: 1em 0 0 0;
-}
-
-#introduction>article>button {
-    padding: 0 0 1em 0;
 }
