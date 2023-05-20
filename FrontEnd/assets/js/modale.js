@@ -1,13 +1,13 @@
 const modalContainer = document.querySelector(".modal-container");
 const modalTriggers = document.querySelectorAll(".modal-trigger");
+const galleryScreen = document.querySelector(".modal");
+const uploadScreen = document.querySelector(".modal-two");
 const btnCloseModal = document.querySelector(".close-modal");
-const secondModal = document.querySelector(".modal-two");
-const btnCloseModalTwo = secondModal.querySelector(".close-modal");
+const btnCloseModalTwo = uploadScreen.querySelector(".close-modal");
 const secondModalTrigger = document.querySelector(".add-photo-btn");
 const overlay = document.querySelector(".overlay");
-const previousModal = document.querySelector(".previous-modal");
+const previousModalTrigger = document.querySelector(".previous-modal");
 const deleteGallery = document.querySelector(".supprimer");
-const modalPrimary = document.querySelector(".modal");
 const validationButton = document.querySelector(".validation-btn");
 
 modalTriggers.forEach((trigger) =>
@@ -16,7 +16,6 @@ modalTriggers.forEach((trigger) =>
 btnCloseModal.addEventListener("click", function (event) {
   modalContainer.classList.remove("display-block");
   modalContainer.classList.add("hidden");
-  console.log(event);
 });
 btnCloseModalTwo.addEventListener("click", function (event) {
   modalContainer.classList.remove("display-block");
@@ -25,16 +24,20 @@ btnCloseModalTwo.addEventListener("click", function (event) {
 overlay.addEventListener("click", function (event) {
   modalContainer.classList.remove("display-block");
   modalContainer.classList.add("hidden");
-  console.log(event);
-});
-previousModal.addEventListener("click", function (event) {
-  modalPrimary.classList.toggle("hidden");
-  secondModal.classList.toggle("hidden");
 });
 secondModalTrigger.addEventListener("click", function (event) {
-  modalPrimary.classList.toggle("hidden");
-  secondModal.classList.toggle("hidden");
+  galleryScreen.classList.add("hidden");
+  galleryScreen.classList.remove("display-flex");
+  uploadScreen.classList.add("display-flex");
+  uploadScreen.classList.remove("hidden");
 });
+previousModalTrigger.addEventListener("click", function (event) {
+  galleryScreen.classList.add("display-flex");
+  galleryScreen.classList.remove("hidden");
+  uploadScreen.classList.remove("display-flex");
+  uploadScreen.classList.add("hidden");
+});
+
 function toggleModal() {
   modalContainer.classList.add("display-block");
   modalContainer.classList.remove("hidden");
@@ -64,8 +67,6 @@ const displayWorksOnModal = async () => {
     let img = document.createElement("img");
     let txt = document.createElement("p");
     txt.innerText = "éditer";
-    let iconeCroix = document.createElement("i");
-    iconeCroix.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
     let icone = document.createElement("i");
     icone.setAttribute("class", "fa-solid fa-trash-can");
     icone.addEventListener("click", () => {
@@ -88,9 +89,10 @@ const displayWorksOnModal = async () => {
 
     figure.appendChild(img);
     figure.appendChild(txt);
-    figure.appendChild(iconeCroix);
+
     figure.appendChild(icone);
     galleryModal.appendChild(figure);
+    addMoveCursorToImages(figure);
   }
 };
 displayWorksOnModal();
@@ -111,23 +113,23 @@ async function showCategory() {
 
 showCategory();
 
-validationButton.addEventListener("click", function (event) {
-  console.log(document.querySelector("#project-title").value);
-  console.log(document.querySelector("#img-input").value);
-  console.log(document.querySelector("#project-category").value);
-  event.preventDefault();
-});
-
 function previewImage() {
-  const file = document.getElementById("file").files;
-  if (fil.lenght > 0) {
+  const file = document.getElementById("img-input");
+  const labelAddPhoto = document.querySelector(".add-picture");
+
+  if (!file?.files) {
+    return;
   }
+
   const fileReader = new FileReader();
 
   fileReader.onload = function (event) {
     document.getElementById("preview").setAttribute("src", event.target.result);
+    labelAddPhoto.classList.add("hidden");
+    preview.classList.remove("hidden");
+    labelAddPhoto.classList.remove("display-flex");
   };
-  fileReader.readAsDataURL(file[0]);
+  fileReader.readAsDataURL(file?.files[0]);
 }
 
 const formModal = document.querySelector(".form-modal");
@@ -146,3 +148,19 @@ formModal.addEventListener("submit", function (event) {
     titleError.innerText = "Ce champ ne doit pas être vide";
   }
 });
+
+function addMoveCursorToImages(figure) {
+  if (!figure) {
+    return;
+  }
+
+  let iconeCroix = document.createElement("i");
+
+  figure.addEventListener("mouseover", (e) => {
+    iconeCroix.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
+    figure.appendChild(iconeCroix);
+  });
+  figure.addEventListener("mouseout", (e) => {
+    figure.removeChild(iconeCroix);
+  });
+}
