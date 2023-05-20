@@ -114,9 +114,21 @@ showCategory();
 validationButton.addEventListener("click", function (event) {
   console.log(document.querySelector("#project-title").value);
   console.log(document.querySelector("#img-input").value);
-  console.log(document.querySelector("#select-category").value);
+  console.log(document.querySelector("#project-category").value);
   event.preventDefault();
 });
+
+function previewImage() {
+  const file = document.getElementById("file").files;
+  if (fil.lenght > 0) {
+  }
+  const fileReader = new FileReader();
+
+  fileReader.onload = function (event) {
+    document.getElementById("preview").setAttribute("src", event.target.result);
+  };
+  fileReader.readAsDataURL(file[0]);
+}
 
 const formModal = document.querySelector(".form-modal");
 const projectImage = document.querySelector("#img-input");

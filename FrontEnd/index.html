@@ -141,7 +141,8 @@
 						<p class="picture-size">jpg, png : 4mo max</p>
 					</label>
 					<input type="file" name="image" class="hidden" id="img-input"
-						accept="image/png, image/jpeg, image/jpg">
+						accept="image/png, image/jpeg, image/jpg" onchange="previewImage();">
+					<img id="preview">
 					<!-- <div class="display-edition-parameters"> -->
 					<div id="image-error"></div>
 					<label for="project-title">Titre</label>
