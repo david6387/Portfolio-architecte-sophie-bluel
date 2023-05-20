@@ -199,6 +199,14 @@
     flex-direction: column;
 }
 
+.form-modal label:not(.add-picture) {
+    margin-bottom: 1em;
+}
+
+.form-modal label:not(.add-picture) {
+    margin-top: 2em;
+}
+
 .add-picture {
     display: flex;
     flex-direction: column;
