@@ -133,7 +133,7 @@
 				<button class="previous-modal"><i class="fa-solid fa-arrow-left"></i></button>
 				<button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
 				<h1>Ajouter photo</h1>
-				<!-- <div > -->
+
 				<form class="form-modal" action="" method="POST" enctype="multipart/form-data">
 					<label class="add-picture display-flex" for="img-input">
 						<i class="fa-sharp fa-regular fa-image"></i>
@@ -143,22 +143,25 @@
 					<input id="img-input" class="hidden" type="file" name="image"
 						accept="image/png, image/jpeg, image/jpg" onchange="previewImage();">
 					<img id="preview" class="hidden" />
-					<!-- <div class="display-edition-parameters"> -->
+
 					<div id="image-error"></div>
 					<label for="project-title">Titre</label>
 					<input id="project-title" type="text" name="project-name">
 					<div id="project-title-error"></div>
 					<label for="select-category">Categorie</label>
-					<select id="project-category" name="projet-category"></select>
+					<select id="project-category" name="projet-category">
+						<option value="">Sélectionnez une catégorie</option>
+					</select>
+
 					<div id="project-category-error"></div>
-					<!-- </div> -->
+
 
 					<div class="line"></div>
 					<button class="validation-btn" type="submit">Valider</button>
 				</form>
-				<!-- </div> -->
+
 			</div>
-			<!-- "fa-sharp fa-regular fa-image" -->
+
 			<div class="overlay"></div>
 
 		</div>
