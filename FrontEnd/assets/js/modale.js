@@ -149,6 +149,8 @@ formModal.addEventListener("submit", function (event) {
   }
 });
 
+// validationButton.style.background = "#1D6154";
+
 function addMoveCursorToImages(figure) {
   if (!figure) {
     return;
