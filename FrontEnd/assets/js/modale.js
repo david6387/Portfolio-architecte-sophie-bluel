@@ -140,12 +140,68 @@ const titleError = document.querySelector("#project-title-error");
 const categoryError = document.querySelector("#project-category-error");
 const imageError = document.querySelector("#image-error");
 
+let countForEnabledButton = 0;
+
+projectImage.addEventListener("change", function (event) {
+  console.log(event);
+  if (projectImage.value) {
+    countForEnabledButton++;
+  }
+});
+
 formModal.addEventListener("submit", function (event) {
   event.preventDefault();
+
+  let countForFormValidation = 0;
 
   if (projectTitle.value === "") {
     projectTitle.style.border = "2px solid red";
     titleError.innerText = "Ce champ ne doit pas être vide";
+  } else {
+    projectTitle.style.border = "2px solid green";
+    titleError.innerText = "";
+    countForFormValidation++;
+  }
+  if (projectImage.value === "") {
+    projectImage.style.border = "2px solid red";
+    imageError.innerText = "Veuillez ajouter une image";
+  } else {
+    projectImage.style.border = "2px solid green";
+    imageError.innerText = "";
+    countForFormValidation++;
+  }
+  if (projectCategory.value === "") {
+    projectCategory.style.border = "2px solid red";
+    categoryError.innerText = "Ce champ ne doit pas être vide";
+  } else {
+    projectCategory.style.border = "2px solid green";
+    categoryError.innerText = "";
+    countForFormValidation++;
+  }
+
+  if (countForFormValidation === 3) {
+    console.log(projectImage.files);
+    let formData = new FormData();
+    formData.append("title", projectTitle.value);
+    formData.append("image", projectImage.files[0]);
+    formData.append("category", projectCategory.value);
+
+    fetch("http://localhost:5678/api/works", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        // "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        displayWorks();
+        displayWorksOnModal();
+        // faire sauter la modale
+      })
+      .catch((error) => console.log(error));
   }
 });
 
