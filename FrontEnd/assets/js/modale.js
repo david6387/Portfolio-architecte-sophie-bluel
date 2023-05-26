@@ -97,7 +97,7 @@ const displayWorksOnModal = async () => {
 };
 displayWorksOnModal();
 
-// Formulaire d'ajout d'une photo---------------------------------------
+// <select> Liste d'options des catégories du Formulaire d'ajout d'une photo---------------------------------------
 
 const selectCategory = document.querySelector("#project-category");
 
@@ -112,6 +112,26 @@ async function showCategory() {
 }
 
 showCategory();
+
+// Ajout de l'icone de déplacement au survol des éléments de la galerie
+
+function addMoveCursorToImages(figure) {
+  if (!figure) {
+    return;
+  }
+
+  let dragIcon = document.createElement("i");
+
+  figure.addEventListener("mouseover", (e) => {
+    dragIcon.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
+    figure.appendChild(dragIcon);
+  });
+  figure.addEventListener("mouseout", (e) => {
+    figure.removeChild(dragIcon);
+  });
+}
+
+// Prévisualisation / aperçu de la photo à l'ajout ---------------------------------------
 
 function previewImage() {
   const file = document.getElementById("img-input");
@@ -131,6 +151,8 @@ function previewImage() {
   };
   fileReader.readAsDataURL(file?.files[0]);
 }
+
+//  Soumission du formulaire d'ajout d'une photo ---------------------------------------
 
 const formModal = document.querySelector(".form-modal");
 const projectImage = document.querySelector("#img-input");
@@ -206,19 +228,3 @@ formModal.addEventListener("submit", function (event) {
 });
 
 // validationButton.style.background = "#1D6154";
-
-function addMoveCursorToImages(figure) {
-  if (!figure) {
-    return;
-  }
-
-  let dragIcon = document.createElement("i");
-
-  figure.addEventListener("mouseover", (e) => {
-    dragIcon.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
-    figure.appendChild(dragIcon);
-  });
-  figure.addEventListener("mouseout", (e) => {
-    figure.removeChild(dragIcon);
-  });
-}
