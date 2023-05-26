@@ -97,7 +97,7 @@ const displayWorksOnModal = async () => {
 };
 displayWorksOnModal();
 
-// Formulaire ---------------------------------------
+// Formulaire d'ajout d'une photo---------------------------------------
 
 const selectCategory = document.querySelector("#project-category");
 
@@ -212,13 +212,13 @@ function addMoveCursorToImages(figure) {
     return;
   }
 
-  let iconeCroix = document.createElement("i");
+  let dragIcon = document.createElement("i");
 
   figure.addEventListener("mouseover", (e) => {
-    iconeCroix.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
-    figure.appendChild(iconeCroix);
+    dragIcon.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
+    figure.appendChild(dragIcon);
   });
   figure.addEventListener("mouseout", (e) => {
-    figure.removeChild(iconeCroix);
+    figure.removeChild(dragIcon);
   });
 }
