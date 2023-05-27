@@ -7,7 +7,7 @@ const btnCloseModalTwo = uploadScreen.querySelector(".close-modal");
 const secondModalTrigger = document.querySelector(".add-photo-btn");
 const overlay = document.querySelector(".overlay");
 const previousModalTrigger = document.querySelector(".previous-modal");
-const deleteGallery = document.querySelector(".supprimer");
+const deleteGallery = document.querySelector(".empty-gallery");
 const validationButton = document.querySelector(".validation-btn");
 
 modalTriggers.forEach((trigger) =>
@@ -89,7 +89,6 @@ const displayWorksOnModal = async () => {
 
     figure.appendChild(img);
     figure.appendChild(txt);
-
     figure.appendChild(icone);
     galleryModal.appendChild(figure);
     addMoveCursorToImages(figure);
@@ -113,7 +112,7 @@ async function showCategory() {
 
 showCategory();
 
-// Ajout de l'icone de déplacement au survol des éléments de la galerie
+// Ajout de l'icone de déplacement au survol des éléments de la galerie --------------------
 
 function addMoveCursorToImages(figure) {
   if (!figure) {
@@ -194,7 +193,7 @@ formModal.addEventListener("submit", function (event) {
   }
   if (projectCategory.value === "") {
     projectCategory.style.border = "2px solid red";
-    categoryError.innerText = "Ce champ ne doit pas être vide";
+    categoryError.innerText = "Veuillez sélectionner une catégorie";
   } else {
     projectCategory.style.border = "2px solid green";
     categoryError.innerText = "";
