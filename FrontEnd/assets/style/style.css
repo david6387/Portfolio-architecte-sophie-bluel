@@ -159,6 +159,10 @@ header {
 	font-size: 14px;
 }
 
+header a {
+	text-decoration: none;
+}
+
 section {
 	margin: 50px 0;
 }
@@ -200,6 +204,10 @@ ul img {
 	width: 20px;
 }
 
+ul img:hover {
+	color: #B1663C;
+}
+
 nav li {
 	font-size: 1.2em;
 }
@@ -210,11 +218,14 @@ li:hover {
 
 li a {
 	color: black;
-	text-decoration: none;
 }
 
 li a:hover {
 	color: #B1663C;
+}
+
+.boldInLoginPage {
+	font-weight: bold;
 }
 
 #introduction {
