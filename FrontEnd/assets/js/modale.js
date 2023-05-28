@@ -128,9 +128,8 @@ function previewImage() {
 
   fileReader.onload = function (event) {
     document.getElementById("preview").setAttribute("src", event.target.result);
-    labelAddPhoto.classList.add("hidden");
+    labelAddPhoto.classList.replace("display-flex", "hidden");
     preview.classList.remove("hidden");
-    labelAddPhoto.classList.remove("display-flex");
   };
   fileReader.readAsDataURL(file?.files[0]);
 }
