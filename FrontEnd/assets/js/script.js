@@ -21,14 +21,14 @@ const displayWorks = async () => {
     let figure = document.createElement("figure");
     figure.setAttribute("data-categoryid", work.categoryId);
     figure.setAttribute("class", "display");
-    let img = document.createElement("img");
+    let workPicture = document.createElement("img");
     let figcaption = document.createElement("figcaption");
 
-    img.setAttribute("src", work.imageUrl);
-    img.setAttribute("alt", work.title);
+    workPicture.setAttribute("src", work.imageUrl);
+    workPicture.setAttribute("alt", work.title);
     figcaption.innerText = work.title;
 
-    figure.appendChild(img);
+    figure.appendChild(workPicture);
     figure.appendChild(figcaption);
     gallery.appendChild(figure);
   }
