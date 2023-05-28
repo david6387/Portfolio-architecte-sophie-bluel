@@ -150,6 +150,14 @@ const titleError = document.querySelector("#project-title-error");
 const categoryError = document.querySelector("#project-category-error");
 const imageError = document.querySelector("#image-error");
 
+// if (
+//   projectImage.value != "" &&
+//   projectCategory.value != "" &&
+//   projectTitle.value != ""
+// ) {
+//   validationButton.style.background = "#1D6154";
+// }
+
 let countForEnabledButton = 0;
 
 projectImage.addEventListener("change", function (event) {
@@ -212,5 +220,3 @@ formModal.addEventListener("submit", function (event) {
       .catch((error) => console.log(error));
   }
 });
-
-// validationButton.style.background = "#1D6154";
