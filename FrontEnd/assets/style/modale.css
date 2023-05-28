@@ -127,10 +127,9 @@
 
 .fa-trash-can {
     position: absolute;
-    top: 10%;
-    right: 20%;
+    top: 5%;
+    right: 5%;
     color: white;
-    width: 9px;
 }
 
 .fa-trash-can:before {
@@ -146,20 +145,15 @@
 
 .fa-arrows-up-down-left-right {
     position: absolute;
-    top: 10%;
-    right: 50%;
+    top: 5%;
+    right: 31%;
     color: white;
-    width: 9px;
 }
 
 .fa-arrows-up-down-left-right:before {
     background: black;
     padding: 2px;
     border-radius: 2px;
-}
-
-.fa-arrows-up-down-left-right:hover {
-    cursor: move;
 }
 
 .add-photo-btn {
