@@ -43,7 +43,7 @@ function toggleModal() {
   modalContainer.classList.remove("hidden");
 }
 
-// Affichage de la galerie dans le 1er écran de la modale -----------
+// Affichage de la galerie dans le 1er écran de la modale & suppression travaux -----------
 
 const galleryModal = document.querySelector(".gallery-modal");
 
