@@ -196,13 +196,8 @@
 }
 
 .form-modal label:not(.add-picture) {
-    margin-bottom: 1em;
-    text-align: left;
-    width: 100%;
-}
-
-.form-modal label:not(.add-picture) {
     margin-top: 2em;
+    margin-bottom: 1em;
     text-align: left;
     width: 100%;
 }
