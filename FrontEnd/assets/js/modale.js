@@ -45,17 +45,7 @@ function toggleModal() {
 
 // Affichage de la galerie dans le 1er écran de la modale -----------
 
-// let works = [];
-
 const galleryModal = document.querySelector(".gallery-modal");
-
-// const apiWorks = async () => {
-//   await fetch("http://localhost:5678/api/works")
-//     .then((response) => response.json())
-//     .then((worksResponse) => {
-//       works = worksResponse;
-//     });
-// };
 
 const displayWorksOnModal = async () => {
   await apiWorks();
