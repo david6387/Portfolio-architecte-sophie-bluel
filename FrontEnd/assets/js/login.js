@@ -10,6 +10,8 @@ const password = document.querySelector("#password");
 const emailError = document.querySelector("#emailMsgErreur");
 const passwordError = document.querySelector("#pswMsgErreur");
 
+// Gestion de la page de connexion ----------------------
+
 formLogin.addEventListener("submit", function (event) {
   event.preventDefault();
   let validationCompte = 0;
@@ -28,9 +30,9 @@ formLogin.addEventListener("submit", function (event) {
   if (password.value === "") {
     password.style.border = "2px solid red";
     passwordError.innerText = "Vous devez renseigner ce champ";
-    // } else if (regexPassword.test(password.value) === false) {
-    //   password.style.border = "2px solid red";
-    //   passwordError.innerText = "Le mot de passe n'est pas assez sécurisé";
+  } else if (regexPassword.test(password.value) === false) {
+    password.style.border = "2px solid red";
+    passwordError.innerText = "Le mot de passe n'est pas assez sécurisé";
   } else {
     password.style.border = "2px solid green";
     passwordError.innerText = "";
@@ -53,7 +55,7 @@ formLogin.addEventListener("submit", function (event) {
       .then((data) => {
         console.log(data);
         if (data.message === "user not found") {
-          alert("Vote identifiant ou votre mot de passe ne sont pas corrects");
+          alert("Votre identifiant ou votre mot de passe ne sont pas corrects");
         } else {
           sessionStorage.setItem("isConnected", true);
           sessionStorage.setItem("token", data.token);

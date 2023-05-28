@@ -43,7 +43,7 @@ function toggleModal() {
   modalContainer.classList.remove("hidden");
 }
 
-//--------------------------------------/
+// Affichage de la galerie dans le 1er écran de la modale -----------
 
 // let works = [];
 
@@ -96,22 +96,6 @@ const displayWorksOnModal = async () => {
 };
 displayWorksOnModal();
 
-// <select> Liste d'options des catégories du Formulaire d'ajout d'une photo---------------------------------------
-
-const selectCategory = document.querySelector("#project-category");
-
-async function showCategory() {
-  await apiCategories();
-  for (let category of categories) {
-    let option = document.createElement("option");
-    option.value = category.id;
-    option.innerText = category.name;
-    selectCategory.appendChild(option);
-  }
-}
-
-showCategory();
-
 // Ajout de l'icone de déplacement au survol des éléments de la galerie --------------------
 
 function addMoveCursorToImages(figure) {
@@ -129,6 +113,22 @@ function addMoveCursorToImages(figure) {
     figure.removeChild(dragIcon);
   });
 }
+
+// <select> Liste d'options des catégories du Formulaire d'ajout d'une photo---------------------------------------
+
+const selectCategory = document.querySelector("#project-category");
+
+async function showCategory() {
+  await apiCategories();
+  for (let category of categories) {
+    let option = document.createElement("option");
+    option.value = category.id;
+    option.innerText = category.name;
+    selectCategory.appendChild(option);
+  }
+}
+
+showCategory();
 
 // Prévisualisation / aperçu de la photo à l'ajout ---------------------------------------
 

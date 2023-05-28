@@ -1,10 +1,8 @@
 let works = [];
 
-// function stringToHTML(str, elementType) {}
-
 const sectionPortfolio = document.querySelector("#portfolio");
-// const gallery = document.querySelector("#portfolio .gallery");
 const gallery = document.getElementsByClassName("gallery")[0];
+
 // Récupération des travaux depuis le fichier JSON / API
 const apiWorks = async () => {
   await fetch("http://localhost:5678/api/works")
@@ -14,10 +12,7 @@ const apiWorks = async () => {
       works = worksResponse;
     });
 };
-// const response = await fetch("http://localhost:5678/api/works");
-// const works = await response.json();
 
-// création des balises avec createElement
 const displayWorks = async () => {
   await apiWorks();
   // console.log(works);
@@ -37,15 +32,6 @@ const displayWorks = async () => {
     figure.appendChild(img);
     figure.appendChild(figcaption);
     gallery.appendChild(figure);
-
-    //     const workElement = `
-    //     <figure class="display" data-categoryid=${work.categoryId}>
-    //       <img class="test" src=${work.imageUrl} alt=${work.title} />
-    //       <figcaption>${work.title}</figcaption>
-    //     </figure>
-    // `;
-
-    // gallery.insertAdjacentHTML("beforeend", workElement);
   }
 };
 displayWorks();
