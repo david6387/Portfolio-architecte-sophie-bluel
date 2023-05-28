@@ -85,6 +85,8 @@ const displayWorksOnModal = async () => {
 };
 displayWorksOnModal();
 
+// Fonction permettant de supprimmer tous les travaux ------------------
+
 // Ajout de l'icone de déplacement au survol des éléments de la galerie --------------------
 
 function addMoveCursorToImages(figure) {
