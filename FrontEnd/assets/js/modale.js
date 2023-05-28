@@ -78,7 +78,6 @@ const displayWorksOnModal = async () => {
           authorization: `Bearer ${token}`,
         },
       }).then((response) => {
-        console.log(response.status);
         displayWorks();
         displayWorksOnModal();
       });
@@ -164,7 +163,6 @@ const imageError = document.querySelector("#image-error");
 let countForEnabledButton = 0;
 
 projectImage.addEventListener("change", function (event) {
-  console.log(event);
   if (projectImage.value) {
     countForEnabledButton++;
   }
@@ -201,7 +199,6 @@ formModal.addEventListener("submit", function (event) {
   }
 
   if (countForFormValidation === 3) {
-    console.log(projectImage.files);
     let formData = new FormData();
     formData.append("title", projectTitle.value);
     formData.append("image", projectImage.files[0]);

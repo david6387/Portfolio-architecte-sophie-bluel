@@ -3,21 +3,21 @@ let works = [];
 const sectionPortfolio = document.querySelector("#portfolio");
 const gallery = document.getElementsByClassName("gallery")[0];
 
-// Récupération des travaux depuis le fichier JSON / API
+// Récupération des travaux depuis le fichier JSON / API ---------------
+
 const apiWorks = async () => {
   await fetch("http://localhost:5678/api/works")
     .then((response) => response.json())
     .then((worksResponse) => {
-      // console.log(worksResponse);
       works = worksResponse;
     });
 };
 
+// Mise en place de l'affichage des travaux ---------------
+
 const displayWorks = async () => {
   await apiWorks();
-  // console.log(works);
   for (let work of works) {
-    // console.log(work);
     let figure = document.createElement("figure");
     figure.setAttribute("data-categoryid", work.categoryId);
     figure.setAttribute("class", "display");
@@ -26,7 +26,6 @@ const displayWorks = async () => {
 
     img.setAttribute("src", work.imageUrl);
     img.setAttribute("alt", work.title);
-    // figcaption.setAttribute("figcpation", work.title);
     figcaption.innerText = work.title;
 
     figure.appendChild(img);
@@ -36,16 +35,15 @@ const displayWorks = async () => {
 };
 displayWorks();
 
-// Affichage des catégories
+// Mise en place du filtre des travaux par catégories -----------------------------
+
 let categories = [];
 
 const sectionCategories = document.getElementsByClassName("categories")[0];
-// console.log("categories");
 const apiCategories = async () => {
   await fetch("http://localhost:5678/api/categories")
     .then((response) => response.json())
     .then((categoriesResponse) => {
-      // console.log(categoriesResponse);
       categories = categoriesResponse;
     });
 };
@@ -53,15 +51,9 @@ const apiCategories = async () => {
 const displayCategories = async () => {
   await apiWorks();
   await apiCategories();
-  // console.log(categories);
-  // let buttonForAll = document.createElement("button");
-  // buttonForAll.innerText = "Tous";
-  // sectionCategories.appendChild(buttonForAll);
   categories.unshift({ name: "Tous" });
-  // console.log(categories);
+
   for (let category of categories) {
-    // console.log(category);
-    // debugger;
     let newLi = document.createElement("li");
     let buttonOfCategories = document.createElement("button");
 
@@ -70,7 +62,6 @@ const displayCategories = async () => {
     newLi.appendChild(buttonOfCategories);
     sectionCategories.appendChild(newLi);
 
-    console.log(category.id);
     buttonOfCategories.addEventListener("click", () => {
       let figures = document.querySelectorAll("figure");
       for (let figure of figures) {
@@ -86,19 +77,14 @@ const displayCategories = async () => {
           figure.classList.replace("hidden", "display");
         }
       }
-      // const worksAll = works.filter((work) => {
-      //   return works;
-      // });
-      // console.log(worksAll);
     });
   }
 };
 displayCategories();
 
-/------------------------------------------/;
+// Affichage en mode édition / administrateur / utilisateur connecté ---------------
 
 let isConnected = sessionStorage.getItem("isConnected");
-console.log(isConnected);
 let token = sessionStorage.getItem("token");
 
 async function displayAdminContent() {
@@ -109,13 +95,11 @@ async function displayAdminContent() {
       sessionStorage.clear();
     });
 
-    // gerer affichage
     const editionBanner = document.querySelector(".edition");
     editionBanner.classList.replace("hidden", "display-flex");
     const editionButton = document.querySelector(".modal-trigger");
     editionButton.classList.replace("hidden", "display-inlineBlock");
     const buttonsCategories = document.querySelector(".categories");
-    console.log(buttonsCategories);
     buttonsCategories.classList.replace("display-flex", "hidden");
 
     const sectionIntroduction = document.querySelector("#introduction");
