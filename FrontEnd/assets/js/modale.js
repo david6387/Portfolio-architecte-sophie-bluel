@@ -1,5 +1,5 @@
 const modalContainer = document.querySelector(".modal-container");
-const modalTriggers = document.querySelectorAll(".modal-trigger");
+const modalTrigger = document.querySelector(".modal-trigger");
 const galleryScreen = document.querySelector(".modal");
 const uploadScreen = document.querySelector(".modal-two");
 const btnCloseModal = document.querySelector(".close-modal");
@@ -10,37 +10,30 @@ const previousModalTrigger = document.querySelector(".previous-modal");
 const deleteGallery = document.querySelector(".empty-gallery");
 const validationButton = document.querySelector(".validation-btn");
 
-modalTriggers.forEach((trigger) =>
-  trigger.addEventListener("click", toggleModal)
-);
+// Gestion ouverture & fermeture des écrans de la modale -----------
+
+modalTrigger.addEventListener("click", toggleModal);
+
 btnCloseModal.addEventListener("click", function (event) {
-  modalContainer.classList.remove("display-block");
-  modalContainer.classList.add("hidden");
+  modalContainer.classList.toggle("hidden");
 });
 btnCloseModalTwo.addEventListener("click", function (event) {
-  modalContainer.classList.remove("display-block");
-  modalContainer.classList.add("hidden");
+  modalContainer.classList.toggle("hidden");
 });
 overlay.addEventListener("click", function (event) {
-  modalContainer.classList.remove("display-block");
-  modalContainer.classList.add("hidden");
+  modalContainer.classList.toggle("hidden");
 });
 secondModalTrigger.addEventListener("click", function (event) {
-  galleryScreen.classList.add("hidden");
-  galleryScreen.classList.remove("display-flex");
-  uploadScreen.classList.add("display-flex");
-  uploadScreen.classList.remove("hidden");
+  galleryScreen.classList.toggle("hidden");
+  uploadScreen.classList.toggle("hidden");
 });
 previousModalTrigger.addEventListener("click", function (event) {
-  galleryScreen.classList.add("display-flex");
-  galleryScreen.classList.remove("hidden");
-  uploadScreen.classList.remove("display-flex");
-  uploadScreen.classList.add("hidden");
+  galleryScreen.classList.toggle("hidden");
+  uploadScreen.classList.toggle("hidden");
 });
 
 function toggleModal() {
-  modalContainer.classList.add("display-block");
-  modalContainer.classList.remove("hidden");
+  modalContainer.classList.toggle("hidden");
 }
 
 // Affichage de la galerie dans le 1er écran de la modale & suppression travaux -----------
