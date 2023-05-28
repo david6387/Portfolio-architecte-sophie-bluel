@@ -150,13 +150,19 @@ const titleError = document.querySelector("#project-title-error");
 const categoryError = document.querySelector("#project-category-error");
 const imageError = document.querySelector("#image-error");
 
-// if (
-//   projectImage.value != "" &&
-//   projectCategory.value != "" &&
-//   projectTitle.value != ""
-// ) {
-//   validationButton.style.background = "#1D6154";
-// }
+function checkFormFields() {
+  if (
+    projectImage.value !== "" &&
+    projectTitle.value !== "" &&
+    projectCategory.value !== ""
+  ) {
+    validationButton.style.backgroundColor = "#1D6154";
+  } else {
+    validationButton.style.backgroundColor = "";
+  }
+}
+
+formModal.addEventListener("change", checkFormFields);
 
 let countForEnabledButton = 0;
 
