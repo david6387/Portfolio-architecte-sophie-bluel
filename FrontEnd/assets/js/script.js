@@ -54,6 +54,7 @@ displayWorks();
 let categories = [];
 
 const sectionCategories = document.getElementsByClassName("categories")[0];
+
 const apiCategories = async () => {
   try {
     await fetch("http://localhost:5678/api/categories")
