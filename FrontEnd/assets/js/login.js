@@ -3,8 +3,8 @@ const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/;
 const formLogin = document.querySelector("#login-form");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-const emailError = document.querySelector("#emailMsgErreur");
-const passwordError = document.querySelector("#pswMsgErreur");
+const emailError = document.querySelector("#email-error");
+const passwordError = document.querySelector("#password-error");
 
 // Gestion de la page de connexion ----------------------
 
