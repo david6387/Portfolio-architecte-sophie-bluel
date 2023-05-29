@@ -41,42 +41,48 @@ function toggleModal() {
 const galleryModal = document.querySelector(".gallery-modal");
 
 const displayWorksOnModal = async () => {
-  await apiWorks();
-
-  for (let work of works) {
-    let figure = document.createElement("figure");
-    figure.setAttribute("data-categoryid", work.categoryId);
-    figure.setAttribute("class", "figure-modale");
-    let img = document.createElement("img");
-    let txt = document.createElement("p");
-    txt.innerText = "éditer";
-    let icone = document.createElement("i");
-    icone.setAttribute("class", "fa-solid fa-trash-can");
-    icone.addEventListener("click", () => {
-      fetch(`http://localhost:5678/api/works/${work.id}`, {
-        method: "DELETE",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-      }).then((response) => {
-        displayWorks();
-        displayWorksOnModal();
+  try {
+    await apiWorks();
+    for (let work of works) {
+      let figure = document.createElement("figure");
+      figure.setAttribute("data-categoryid", work.categoryId);
+      figure.setAttribute("class", "figure-modale");
+      let img = document.createElement("img");
+      let txt = document.createElement("p");
+      txt.innerText = "éditer";
+      let icone = document.createElement("i");
+      icone.setAttribute("class", "fa-solid fa-trash-can");
+      icone.addEventListener("click", () => {
+        fetch(`http://localhost:5678/api/works/${work.id}`, {
+          method: "DELETE",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+        }).then((response) => {
+          displayWorks();
+          displayWorksOnModal();
+        });
       });
-    });
-
-    img.setAttribute("src", work.imageUrl);
-    img.setAttribute("alt", work.title);
-
-    figure.appendChild(img);
-    figure.appendChild(txt);
-    figure.appendChild(icone);
-    galleryModal.appendChild(figure);
-    addMoveCursorToImages(figure);
+      img.setAttribute("src", work.imageUrl);
+      img.setAttribute("alt", work.title);
+      figure.appendChild(img);
+      figure.appendChild(txt);
+      figure.appendChild(icone);
+      galleryModal.appendChild(figure);
+      addMoveCursorToImages(figure);
+    }
+  } catch (error) {
+    console.log(
+      "Erreur lors de l'affichage / la supression des travaux dans la galerie de la modale :",
+      error
+    );
   }
 };
-displayWorksOnModal();
+displayWorksOnModal().catch((error) => {
+  console.log("Erreur lors de l'éxécution de displayWorksOnModal :", error);
+});
 
 // Fonction permettant de supprimmer tous les travaux ------------------
 
@@ -103,12 +109,19 @@ function addMoveCursorToImages(figure) {
 const selectCategory = document.querySelector("#project-category");
 
 async function showCategory() {
-  await apiCategories();
-  for (let category of categories) {
-    let option = document.createElement("option");
-    option.value = category.id;
-    option.innerText = category.name;
-    selectCategory.appendChild(option);
+  try {
+    await apiCategories();
+    for (let category of categories) {
+      let option = document.createElement("option");
+      option.value = category.id;
+      option.innerText = category.name;
+      selectCategory.appendChild(option);
+    }
+  } catch (error) {
+    console.log(
+      "Une erreur s'est produite lors de la récupération des catégories de la liste d'option :",
+      error
+    );
   }
 }
 
