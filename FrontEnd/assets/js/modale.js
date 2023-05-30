@@ -119,7 +119,7 @@ async function showCategory() {
     }
   } catch (error) {
     console.log(
-      "Une erreur s'est produite lors de la récupération des catégories de la liste d'option :",
+      "Erreur lors de la récupération des catégories de la liste d'option :",
       error
     );
   }
