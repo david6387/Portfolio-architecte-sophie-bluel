@@ -13,10 +13,7 @@ const apiWorks = async () => {
         works = worksResponse;
       });
   } catch (error) {
-    console.log(
-      "Une erreur s'est produite lors de la récupération des données :",
-      error
-    );
+    console.log("Erreur dans la récupération des données :", error);
   }
 };
 
@@ -41,10 +38,7 @@ const displayWorks = async () => {
       gallery.appendChild(figure);
     }
   } catch (error) {
-    console.log(
-      "Une erreur s'est produite lors de l'affichage des travaux' :",
-      error
-    );
+    console.log("Erreur à l'affichage des travaux' :", error);
   }
 };
 displayWorks();
@@ -63,10 +57,7 @@ const apiCategories = async () => {
         categories = categoriesResponse;
       });
   } catch (error) {
-    console.log(
-      "Une erreur s'est produite lors de l'affichage des catégories :",
-      error
-    );
+    console.log("Erreur à l'affichage des catégories :", error);
   }
 };
 
@@ -101,10 +92,7 @@ const displayCategories = async () => {
       });
     }
   } catch (error) {
-    console.log(
-      "Une erreur s'est produite lors du filtre des catégories :",
-      error
-    );
+    console.log("Erreur lors du filtre des catégories :", error);
   }
 };
 displayCategories();
@@ -137,10 +125,7 @@ const displayAdminContent = async () => {
       });
     }
   } catch (error) {
-    console.log(
-      "Une erreur s'est produite lors de l'affichage du mode édition :",
-      error
-    );
+    console.log("Erreur à l'affichage du mode édition :", error);
   }
 };
 
