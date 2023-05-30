@@ -103,7 +103,7 @@ function deleteAllWorks() {
     //         authorization: `Bearer ${token}`,
     //       },
     //     })
-    // }
+    // } Prévoir route pour supprimer tous les travaux
     galleryModal.innerHTML = "";
     gallery.innerHTML = "";
     toggleModal();
@@ -194,14 +194,6 @@ function checkFormFields() {
 }
 
 formToAddPicture.addEventListener("change", checkFormFields);
-
-// let countForEnabledButton = 0;
-
-// projectImage.addEventListener("change", function (event) {
-//   if (projectImage.value) {
-//     countForEnabledButton++;
-//   }
-// });
 
 formToAddPicture.addEventListener("submit", function (event) {
   event.preventDefault();

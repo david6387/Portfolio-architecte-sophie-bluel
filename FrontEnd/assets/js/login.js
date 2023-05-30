@@ -48,14 +48,13 @@ formLogin.addEventListener("submit", function (event) {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.message === "user not found") {
+        if (data.message === "user not found" || data.error) {
           alert("Votre identifiant ou votre mot de passe ne sont pas corrects");
         } else {
           sessionStorage.setItem("isConnected", true);
           sessionStorage.setItem("token", data.token);
           location.assign("index.html");
         }
-        // vérifier erreurs ds data... créer div
       })
       .catch((error) => console.log(error));
   }
