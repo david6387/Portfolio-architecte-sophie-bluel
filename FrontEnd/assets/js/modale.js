@@ -177,27 +177,12 @@ const formToAddPicture = document.querySelector(".form-modal");
 const projectImage = document.querySelector("#img-input");
 const projectTitle = document.querySelector("#project-title");
 const projectCategory = document.querySelector("#project-category");
-const titleError = document.querySelector("#project-title-error");
-const categoryError = document.querySelector("#project-category-error");
-const imageError = document.querySelector("#image-error");
-
-function checkFormFields() {
-  if (
-    projectImage.value !== "" &&
-    projectTitle.value !== "" &&
-    projectCategory.value !== ""
-  ) {
-    validationButton.style.backgroundColor = "#1D6154";
-  } else {
-    validationButton.style.backgroundColor = "";
-  }
-}
-
-formToAddPicture.addEventListener("change", checkFormFields);
 
 formToAddPicture.addEventListener("submit", function (event) {
   event.preventDefault();
-
+  const titleError = document.querySelector("#project-title-error");
+  const categoryError = document.querySelector("#project-category-error");
+  const imageError = document.querySelector("#image-error");
   let countForFormValidation = 0;
 
   if (projectTitle.value === "") {
@@ -248,3 +233,19 @@ formToAddPicture.addEventListener("submit", function (event) {
       .catch((error) => console.log(error));
   }
 });
+
+//  Changement couleur bouton qd champs remplis ----------------------------
+
+function checkFormFields() {
+  if (
+    projectImage.value !== "" &&
+    projectTitle.value !== "" &&
+    projectCategory.value !== ""
+  ) {
+    validationButton.style.backgroundColor = "#1D6154";
+  } else {
+    validationButton.style.backgroundColor = "";
+  }
+}
+
+formToAddPicture.addEventListener("change", checkFormFields);
