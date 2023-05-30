@@ -38,9 +38,8 @@ function toggleModal() {
 
 // Affichage de la galerie dans le 1er écran de la modale & suppression travaux -----------
 
-const galleryModal = document.querySelector(".gallery-modal");
-
 const displayWorksOnModal = async () => {
+  const galleryModal = document.querySelector(".gallery-modal");
   try {
     await apiWorks();
     for (let work of works) {
@@ -106,9 +105,8 @@ function addMoveCursorToImages(figure) {
 
 // <select> Liste d'options des catégories du Formulaire d'ajout d'une photo---------------------------------------
 
-const selectCategory = document.querySelector("#project-category");
-
 async function showCategory() {
+  const selectCategory = document.querySelector("#project-category");
   try {
     await apiCategories();
     for (let category of categories) {
@@ -131,7 +129,6 @@ showCategory();
 
 function previewImage() {
   const file = document.getElementById("img-input");
-  const labelAddPhoto = document.querySelector(".add-picture");
 
   if (!file?.files) {
     return;
@@ -140,6 +137,7 @@ function previewImage() {
   const fileReader = new FileReader();
 
   fileReader.onload = function (event) {
+    const labelAddPhoto = document.querySelector(".add-picture");
     document.getElementById("preview").setAttribute("src", event.target.result);
     labelAddPhoto.classList.replace("display-flex", "hidden");
     preview.classList.remove("hidden");
