@@ -1,15 +1,14 @@
-const regexEmail = /^[a-z]+\.[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g;
-const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/;
-const formLogin = document.querySelector("#login-form");
-const email = document.querySelector("#email");
-const password = document.querySelector("#password");
-const emailError = document.querySelector("#email-error");
-const passwordError = document.querySelector("#password-error");
-
 // Gestion de la page de connexion ----------------------
+const formLogin = document.querySelector("#login-form");
 
 formLogin.addEventListener("submit", function (event) {
   event.preventDefault();
+  const regexEmail = /^[a-z]+\.[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g;
+  const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/;
+  const email = document.querySelector("#email");
+  const password = document.querySelector("#password");
+  const emailError = document.querySelector("#email-error");
+  const passwordError = document.querySelector("#password-error");
   let validationCompte = 0;
   if (email.value === "") {
     email.style.border = "2px solid red";
