@@ -1,6 +1,5 @@
 let works = [];
 
-const sectionPortfolio = document.querySelector("#portfolio");
 const gallery = document.getElementsByClassName("gallery")[0];
 
 // Récupération des travaux depuis le fichier JSON / API ---------------
