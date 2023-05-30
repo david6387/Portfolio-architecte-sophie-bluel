@@ -147,7 +147,7 @@ function previewImage() {
 
 //  Soumission du formulaire d'ajout d'une photo ---------------------------------------
 
-const formModal = document.querySelector(".form-modal");
+const formToAddPicture = document.querySelector(".form-modal");
 const projectImage = document.querySelector("#img-input");
 const projectTitle = document.querySelector("#project-title");
 const projectCategory = document.querySelector("#project-category");
@@ -167,7 +167,7 @@ function checkFormFields() {
   }
 }
 
-formModal.addEventListener("change", checkFormFields);
+formToAddPicture.addEventListener("change", checkFormFields);
 
 let countForEnabledButton = 0;
 
@@ -177,7 +177,7 @@ projectImage.addEventListener("change", function (event) {
   }
 });
 
-formModal.addEventListener("submit", function (event) {
+formToAddPicture.addEventListener("submit", function (event) {
   event.preventDefault();
 
   let countForFormValidation = 0;
