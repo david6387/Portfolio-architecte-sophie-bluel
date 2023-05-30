@@ -24,6 +24,7 @@ const displayWorks = async () => {
     for (let work of works) {
       let figure = document.createElement("figure");
       figure.setAttribute("data-categoryid", work.categoryId);
+      figure.setAttribute("data-workid", work.id);
       figure.setAttribute("class", "display");
       let workPicture = document.createElement("img");
       let workFigcaption = document.createElement("figcaption");
@@ -62,7 +63,6 @@ const apiCategories = async () => {
 
 const displayCategories = async () => {
   try {
-    await apiWorks();
     await apiCategories();
     categories.unshift({ name: "Tous" });
 

@@ -284,6 +284,7 @@ li a:hover {
 .categories button:hover {
 	background: #1D6154;
 	color: white;
+	cursor: pointer;
 }
 
 .gallery {
@@ -408,4 +409,8 @@ footer nav ul {
 
 .display-flex {
 	display: flex;
+}
+
+.gallery figcaption {
+	margin-top: 5px;
 }

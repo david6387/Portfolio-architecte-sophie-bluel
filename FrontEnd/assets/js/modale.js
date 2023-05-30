@@ -9,6 +9,7 @@ const overlay = document.querySelector(".overlay");
 const previousModalTrigger = document.querySelector(".previous-modal");
 const deleteGallery = document.querySelector(".empty-gallery");
 const validationButton = document.querySelector(".validation-btn");
+const galleryModal = document.querySelector(".gallery-modal");
 
 // Gestion ouverture & fermeture des écrans de la modale -----------
 
@@ -39,12 +40,12 @@ function toggleModal() {
 // Affichage de la galerie dans le 1er écran de la modale & suppression travaux -----------
 
 const displayWorksOnModal = async () => {
-  const galleryModal = document.querySelector(".gallery-modal");
   try {
     await apiWorks();
     for (let work of works) {
       let figure = document.createElement("figure");
       figure.setAttribute("data-categoryid", work.categoryId);
+      figure.setAttribute("data-workid", work.id);
       figure.setAttribute("class", "figure-modale");
       let img = document.createElement("img");
       let txt = document.createElement("p");
@@ -59,11 +60,17 @@ const displayWorksOnModal = async () => {
             "Content-Type": "application/json",
             authorization: `Bearer ${token}`,
           },
-        }).then((response) => {
-          displayWorks();
-          displayWorksOnModal();
-        });
+        })
+          .then(() => {
+            document
+              .querySelectorAll(`[data-workid='${work.id}']`)
+              .forEach((work) => work.remove());
+          })
+          .catch((error) =>
+            console.log("Erreur à la suppresion d'une image : " + error)
+          );
       });
+
       img.setAttribute("src", work.imageUrl);
       img.setAttribute("alt", work.title);
       figure.appendChild(img);
@@ -84,6 +91,25 @@ displayWorksOnModal().catch((error) => {
 });
 
 // Fonction permettant de supprimmer tous les travaux ------------------
+
+function deleteAllWorks() {
+  deleteGallery.addEventListener("click", () => {
+    // for (let work of works) {
+    //   fetch(`http://localhost:5678/api/works/${work.id}`, {
+    //       method: "DELETE",
+    //       headers: {
+    //         Accept: "application/json",
+    //         "Content-Type": "application/json",
+    //         authorization: `Bearer ${token}`,
+    //       },
+    //     })
+    // }
+    galleryModal.innerHTML = "";
+    gallery.innerHTML = "";
+    toggleModal();
+  });
+}
+deleteAllWorks();
 
 // Ajout de l'icone de déplacement au survol des éléments de la galerie --------------------
 
@@ -169,13 +195,13 @@ function checkFormFields() {
 
 formToAddPicture.addEventListener("change", checkFormFields);
 
-let countForEnabledButton = 0;
+// let countForEnabledButton = 0;
 
-projectImage.addEventListener("change", function (event) {
-  if (projectImage.value) {
-    countForEnabledButton++;
-  }
-});
+// projectImage.addEventListener("change", function (event) {
+//   if (projectImage.value) {
+//     countForEnabledButton++;
+//   }
+// });
 
 formToAddPicture.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -226,7 +252,6 @@ formToAddPicture.addEventListener("submit", function (event) {
       .then((data) => {
         displayWorks();
         displayWorksOnModal();
-        // faire sauter la modale
       })
       .catch((error) => console.log(error));
   }
