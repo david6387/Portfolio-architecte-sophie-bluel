@@ -21,7 +21,7 @@ const apiWorks = async () => {
   }
 };
 
-// Mise en place de l'affichage des travaux ---------------
+// Gestion de l'affichage des travaux ---------------
 
 const displayWorks = async () => {
   try {
@@ -92,7 +92,7 @@ const displayCategories = async () => {
       });
     }
   } catch (error) {
-    console.log("Erreur lors du filtre des catégories :", error);
+    console.log("Erreur de filtre des catégories :", error);
   }
 };
 displayCategories();
