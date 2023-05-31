@@ -33,11 +33,9 @@ const displayWorks = async () => {
       figure.setAttribute("class", "display");
       let workPicture = document.createElement("img");
       let workFigcaption = document.createElement("figcaption");
-
       workPicture.setAttribute("src", work.imageUrl);
       workPicture.setAttribute("alt", work.title);
       workFigcaption.innerText = work.title;
-
       figure.appendChild(workPicture);
       figure.appendChild(workFigcaption);
       gallery.appendChild(figure);
@@ -70,11 +68,9 @@ const displayCategories = async () => {
   try {
     await apiCategories();
     categories.unshift({ name: "Tous" });
-
     for (let category of categories) {
       let newLi = document.createElement("li");
       let buttonOfCategories = document.createElement("button");
-
       buttonOfCategories.innerText = category.name;
       newLi.appendChild(buttonOfCategories);
       sectionCategories.appendChild(newLi);
@@ -114,14 +110,12 @@ const displayAdminContent = async () => {
       connexionButton.addEventListener("click", function (event) {
         sessionStorage.clear();
       });
-
       const editionBanner = document.querySelector(".edition");
       editionBanner.classList.replace("hidden", "display-flex");
       const editionButton = document.querySelector(".modal-trigger");
       editionButton.classList.replace("hidden", "display-inlineBlock");
       const buttonsCategories = document.querySelector(".categories");
       buttonsCategories.classList.replace("display-flex", "hidden");
-
       const sectionIntroduction = document.querySelector("#introduction");
       const modifButtons = sectionIntroduction.querySelectorAll(".modify-btn");
       modifButtons.forEach(function (button) {
@@ -132,5 +126,4 @@ const displayAdminContent = async () => {
     console.log("Erreur à l'affichage du mode édition :", error);
   }
 };
-
 displayAdminContent();

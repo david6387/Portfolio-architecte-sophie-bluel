@@ -220,7 +220,6 @@ formToAddPicture.addEventListener("submit", function (event) {
       method: "POST",
       headers: {
         Accept: "application/json",
-        // "Content-Type": "application/json",
         authorization: `Bearer ${token}`,
       },
       body: formData,
