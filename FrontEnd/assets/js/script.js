@@ -6,7 +6,12 @@ const gallery = document.getElementsByClassName("gallery")[0];
 
 const apiWorks = async () => {
   try {
-    await fetch("http://localhost:5678/api/works")
+    await fetch("http://localhost:5678/api/works", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    })
       .then((response) => response.json())
       .then((worksResponse) => {
         works = worksResponse;
