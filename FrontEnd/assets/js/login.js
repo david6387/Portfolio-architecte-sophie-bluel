@@ -49,7 +49,7 @@ formLogin.addEventListener("submit", function (event) {
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "user not found" || data.error) {
-          alert("Votre identifiant ou votre mot de passe ne sont pas corrects");
+          alert("Erreur dans l’identifiant ou le mot de passe");
         } else {
           sessionStorage.setItem("isConnected", true);
           sessionStorage.setItem("token", data.token);
