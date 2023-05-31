@@ -120,11 +120,11 @@ function addMoveCursorToImages(figure) {
 
   let dragIcon = document.createElement("i");
 
-  figure.addEventListener("mouseover", (e) => {
+  figure.addEventListener("mouseover", (event) => {
     dragIcon.setAttribute("class", "fa-solid fa-arrows-up-down-left-right");
     figure.appendChild(dragIcon);
   });
-  figure.addEventListener("mouseout", (e) => {
+  figure.addEventListener("mouseout", (event) => {
     figure.removeChild(dragIcon);
   });
 }
